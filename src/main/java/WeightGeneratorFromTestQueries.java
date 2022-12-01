@@ -37,9 +37,8 @@ public class WeightGeneratorFromTestQueries {
 		
 	
 	private static void generateOutputFile(Map<String, Integer> graphWeight, String inputFile) throws IOException {
-		File path = new File(inputFile);
 		List<String> takenPredicates = new ArrayList<String>();
-		String folder = path.getParent();
+		String folder = "src/main/resources";
 		System.out.println("Output files are generated at: " +folder);
 		FileWriter weightFile = new FileWriter(folder.concat("/graphweight.txt")); 
 		FileWriter predicateEncodingFile = new FileWriter(folder.concat("/predicateEncoding.txt")); 
@@ -99,7 +98,7 @@ public class WeightGeneratorFromTestQueries {
 		}
 		
 		for(int i=0; i<predicates.size()-1; i++) {
-			for(int j=1; j<predicates.size(); j++) {
+			for(int j=i+1; j<predicates.size(); j++) {
 				String val1 = predicates.get(i).concat(" ").concat(predicates.get(j));
 				String val2 = predicates.get(j).concat(" ").concat(predicates.get(i));
 				if(!val1.contains("?p") && !val1.equals(val2)) {
@@ -146,6 +145,7 @@ public class WeightGeneratorFromTestQueries {
 				patterns.put(index, qryPatterns);
 				index = index+1;
 			}catch(Exception e) {
+				int foo = 0;
 			}
 		}
 		return patterns;
