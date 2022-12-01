@@ -131,8 +131,6 @@ public class PatternsFinder {
 				else
 					finalPatterns.add(temp);
 
-			} else {
-				int foo = 0;
 			}
 		}
 		

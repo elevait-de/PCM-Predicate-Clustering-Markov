@@ -145,7 +145,7 @@ public class WeightGeneratorFromTestQueries {
 				patterns.put(index, qryPatterns);
 				index = index+1;
 			}catch(Exception e) {
-				int foo = 0;
+				System.err.println("Error getting query pattern, with message: " + e.getMessage());
 			}
 		}
 		return patterns;

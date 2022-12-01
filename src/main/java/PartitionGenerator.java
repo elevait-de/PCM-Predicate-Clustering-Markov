@@ -24,9 +24,9 @@ import org.apache.jena.riot.RDFDataMgr;
 
 public class PartitionGenerator {
 	
-	private static String path = "/home/asal/IdeaProjects/PCG3/src/main/resources/";
-	private static String clusterFile = path+"swdf-clusters.txt";
-	private static String predicateFile = path+"input-queries/swdf/predicateEncoding.txt";
+	private static String path = "src/main/resources/";
+	static String clusterFile = path+"swdf-clusters.txt";
+	private static String predicateFile = path+"predicateEncoding.txt";
 	private static  String predicatePartitions = path+"predicate-based/";
 	private static String outputFolder = path+"final-partitions/";
 	private static int totalPartitions = 10;
