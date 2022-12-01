@@ -1,0 +1,8 @@
+SELECT  ?type ?prop ?val WHERE { <http://data.semanticweb.org/organization/university-of-california-berkeley> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?type . <http://data.semanticweb.org/organization/university-of-california-berkeley> ?prop ?val }
+SELECT  ?type ?prop ?val WHERE { <http://data.semanticweb.org/organization/chemnitz-university-of-technology> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?type . <http://data.semanticweb.org/organization/chemnitz-university-of-technology> ?prop ?val }
+SELECT  ?property ?value WHERE { <http://wit.istc.cnr.it/eswc-stc/workshops-calendar.rdf#0d6f967a-dae7-3620-b29b-a526517b8303_7> ?property ?value }
+SELECT  ?property ?value WHERE { <http://data.semanticweb.org/person/jose-mora> ?property ?value }
+SELECT  ?property ?value WHERE { <http://data.semanticweb.org/conference/iswc/2010/paper/84> ?property ?value }
+SELECT  ?type ?prop ?val WHERE { <http://data.semanticweb.org/organization/best-buy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?type . <http://data.semanticweb.org/organization/best-buy> ?prop ?val }
+SELECT  ?property ?value WHERE { <http://data.semanticweb.org/person/andrea-rodriguez> ?property ?value }
+SELECT  ?property ?value WHERE { <http://data.semanticweb.org/person/pierre-nugues> ?property ?value }
