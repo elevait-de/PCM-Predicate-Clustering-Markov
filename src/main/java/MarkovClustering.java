@@ -22,6 +22,7 @@
 import de.uni_leipzig.mcl.cluster.SparseMatrix;
 import de.uni_leipzig.mcl.cluster.SparseMatrixLabeled;
 import de.uni_leipzig.mcl.cluster.SparseVector;
+import de.uni_leipzig.bf.cluster.ClusterGraph;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -174,35 +175,20 @@ public class MarkovClustering{
         }
     }
     public static void main(String[] args) {
-
 //        String file = "test/topped.txt";
-//        // String file = "test/topped2.txt";
-//        if (args.length > 1)
-//            file = args[0];
-/*
-        double[][] a = MatrixLoader.loadDense(file);
-        SparseMatrix aa = new SparseMatrix(a);
-       
- 
-        // we use the transpose because our sparse matrices are row-major
-        aa = aa.transpose();
-        double maxResidual = 0.001;
-        double gammaExp = 2.0;
-        double loopGain = 0.;
-        double zeroMax = 0.001;
-        MarkovClustering mcl = new MarkovClustering();
-        aa = mcl.run(aa, maxResidual, gammaExp, loopGain, zeroMax);
-        print(aa, "result");
-        */
+        String file = "src/main/resources/graphweight.txt";
+
+        if (args.length > 1)
+            file = args[0];
+
         double maxResidual = 0.001;
         double gammaExp = 2.0;
         double loopGain = 0.00;
         double zeroMax = 0.001;
 
-        String file = "src/main/resources/graphweight.txt";
         SparseMatrixLabeled matrix = SparseMatrixLabeled.loadMatrix(file," ");
 
-
+        // we use the transpose because our sparse matrices are row-major
         matrix.setMatrix(matrix.getMatrix().transpose());
         print(matrix.getMatrix(), "\nload");
         matrix.setMatrix(new MarkovClustering().run(matrix.getMatrix(), maxResidual, gammaExp, loopGain, zeroMax));

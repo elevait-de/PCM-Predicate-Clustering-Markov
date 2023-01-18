@@ -6,6 +6,11 @@ import java.util.Set;
 import org.apache.jena.query.Query;
 import org.apache.jena.query.QueryFactory;
 
+/**
+ * Each pattern is a string which can be used for filtering triples in a sparql query.
+ * like <http://en.wikipedia.org/wiki/Cloud_computing> ?p ?o
+ * it should have three parts so that its predicate can be recognized.
+ */
 public class PatternsFinder {
 
 	public static void main(String[] args) {
@@ -22,27 +27,7 @@ public class PatternsFinder {
 	}
 
 	public static Set<String> getTriplePatterns(String query) {
-		String qry = "PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>\n" +
-				"PREFIX  swrc: <http://swrc.ontoware.org/ontology#>\n" +
-				"PREFIX  ical: <http://www.w3.org/2002/12/cal/ical#>\n" +
-				"PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
-				"PREFIX  owl:  <http://www.w3.org/2002/07/owl#>\n" +
-				"PREFIX  swrc-ext: <http://www.cs.vu.nl/~mcaklein/onto/swrc_ext/2005/05#>\n" +
-				"PREFIX  dcterms: <http://purl.org/dc/terms/>\n" +
-				"PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n" +
-				"PREFIX  foaf: <http://xmlns.com/foaf/0.1/>\n" +
-				"PREFIX  swc:  <http://data.semanticweb.org/ns/swc/ontology#>\n" +
-				"PREFIX  dc:   <http://purl.org/dc/elements/1.1/>\n" +
-				"\n" +
-				"SELECT  ?title ?year\n" +
-				"WHERE\n" +
-				"  { ?x rdf:type swrc:InProceedings .\n" +
-				"    ?x dc:title ?title .\n" +
-				"    ?x swrc:abstract ?abstract .\n" +
-				"    ?x swrc:year ?year .\n" +
-				"    ?x dc:creator ?creator\n" +
-				"  }";
-
+		String qry = "SELECT ?s { ?s <http://example.com/val> ?val . FILTER ( ?val < 20 ) }";
 
 		String qry2 = "PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>\r\n" + 
 				"PREFIX  foaf: <http://xmlns.com/foaf/0.1/>\r\n" + 
@@ -81,13 +66,7 @@ public class PatternsFinder {
 				"    OPTIONAL\r\n" + 
 				"      { ?resource foaf:depiction ?image }\r\n" + 
 				"  }";
-		
-		
-		
-		
-		
-		
-		
+
 		Query q = QueryFactory.create(query);
 		
 		String patt = q.getQueryPattern().toString();

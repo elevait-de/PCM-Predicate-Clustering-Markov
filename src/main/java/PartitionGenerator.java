@@ -22,6 +22,9 @@ import org.apache.jena.rdf.model.StmtIterator;
 import org.apache.jena.riot.Lang;
 import org.apache.jena.riot.RDFDataMgr;
 
+/**
+ * allocate some obtained clusters of triples to partitions
+ */
 public class PartitionGenerator {
 	
 	private static String path = "src/main/resources/";
@@ -57,10 +60,6 @@ public class PartitionGenerator {
 		System.out.println("Terminated Successfully");
 
 	}
-	
-
-	
-
 
 	private static void distributeClustersIntoParatitions(Set<String> clusters, String predicateFile,  String outputFolder, int totalPartitions) throws IOException {
 		for(String c : clusters) {

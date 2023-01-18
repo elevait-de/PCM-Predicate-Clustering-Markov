@@ -13,10 +13,25 @@ import java.util.Set;
 import org.apache.jena.query.Query;
 import org.apache.jena.query.QueryFactory;
 
+/**
+ * WeightGeneratorFromTestQueries extract a list of predicate co-occurrences
+ * from a querying workload and model them as a weighted graph.
+ * It takes a query workload 𝑄 = {𝑞 1, . . . , 𝑞𝑛 } of SPARQL queries as an input.
+ * and creates a predicates co-occurrence list 𝐿 = {𝑒 1, . . . , 𝑒𝑚 }
+ * where each entry 𝑒 =< 𝑝 1, 𝑝 2, 𝑐 >, with 𝑝 1 , 𝑝 2 are two different predicates
+ * used in the triple patterns of SPARQL queries in the given workload,
+ * and 𝑐 is the co-occurrence count, i.e. the number of queries in which
+ * both 𝑝 1 and 𝑝 2 are co-occurred.
+ * Finally, it models the list 𝐿 as a weighted graph, such that for a
+ * given list entry 𝑒 =< 𝑝 1, 𝑝 2, 𝑐 >, it creates two nodes for 𝑝 1 and 𝑝 2
+ * that are connected by a link with weight equalling 𝑐.
+ * The corresponding weighted graph and Encoding of predicates will be written in two text files.
+ */
 public class WeightGeneratorFromTestQueries {
 
 	public static void main(String[] args) throws IOException {
 //		String inputFile =  "/home/asal/IdeaProjects/PCG3/src/main/resources/test-line-query.ttl";
+//		String inputFile =  "/home/asal/Documents/3DFed/Queries/swdf-300-bgp-queries.txt";
 		String inputFile =  "/home/asal/Documents/3DFed/Queries/swdf-300-bgp-queries.txt";
 		Set<String> queries = readQueryFile(inputFile);
  		System.out.println("Total Input queries are: " +queries.size());
@@ -41,7 +56,8 @@ public class WeightGeneratorFromTestQueries {
 		String folder = "src/main/resources";
 		System.out.println("Output files are generated at: " +folder);
 		FileWriter weightFile = new FileWriter(folder.concat("/graphweight.txt")); 
-		FileWriter predicateEncodingFile = new FileWriter(folder.concat("/predicateEncoding.txt")); 
+		FileWriter predicateEncodingFile = new FileWriter(folder.concat("/predicateEncoding.txt"));
+
 		for(String key : graphWeight.keySet()) {
 			String pred1 = key.split(" ")[0].trim();
 			String pred2 = key.split(" ")[1].trim();
