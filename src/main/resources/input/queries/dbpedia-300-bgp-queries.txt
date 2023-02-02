@@ -1,0 +1,4649 @@
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  dbo:  <http://dbpedia.org/ontology/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?uri ?uri1 ?abstract
+WHERE
+  { <http://dbpedia.org/resource/Category:Iron_Age_Europe> skos:broader ?uri .
+    ?uri skos:broader ?uri1
+  }
+#-------------------------------------------------------
+SELECT  ?x ?a ?b
+WHERE
+  { ?x <http://www.georss.org/georss/point> ?z .
+    ?a ?b ?x
+  }
+#-------------------------------------------------------
+SELECT  ?x0
+WHERE
+  { ?k <http://dbpedia.org/ontology/occupation> ?x0 }
+#-------------------------------------------------------
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia3: <http://dbpedia.org/resource/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://dbpedia.org/class/yago/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  category: <http://dbpedia.org/resource/Category:>
+PREFIX  dbo:  <http://dbpedia.org/property/>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  dbpprop: <http://dbpedia.org/property/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?name
+WHERE
+  { ?x foaf:name ?name .
+    ?x rdf:type dbpedia-owl:Artist .
+    ?x dbpedia-owl:nationality :Spain .
+    ?x dbpedia2:dateOfBirth ?nacimiento
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://mpii.de/yago/resource/>
+PREFIX  georss: <http://www.georss.org/georss/>
+PREFIX  umbel-ac: <http://umbel.org/umbel/ac/>
+PREFIX  geonames: <http://www.geonames.org/ontology#>
+PREFIX  units: <http://dbpedia.org/units/>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  gn:   <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  gnpt: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt#>
+PREFIX  umbel-sc: <http://umbel.org/umbel/sc/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  gnpt02: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt-02#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  wikicompany: <http://dbpedia.openlinksw.com/wikicompany/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  opencyc: <http://sw.opencyc.org/2008/06/10/concept/>
+
+SELECT  ?s
+WHERE
+  { <http://dbpedia.org/resource/Izobilny> rdf:type ?s }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?sl ?ml ?img ?l
+WHERE
+  { ?s foaf:depiction ?img .
+    ?s skos:subject <http://dbpedia.org/resource/Category:Hieronymus_Bosch_paintings> .
+    ?s rdfs:label ?sl .
+    ?s dbpedia2:museum ?m .
+    ?m rdfs:label ?ml .
+    ?s dbpedia2:city ?l
+  }
+#-------------------------------------------------------
+SELECT  ?ville ?population ?personne
+WHERE
+  { ?ville <http://dbpedia.org/property/population> ?population .
+    ?personne <http://dbpedia.org/property/birthplace> ?ville .
+    ?personne <http://www.w3.org/2004/02/skos/core#subject> <http://dbpedia.org/resource/Category:French_film_actors>
+  }
+#-------------------------------------------------------
+SELECT  ?x ?a ?b ?c ?d
+WHERE
+  { ?x <http://www.georss.org/georss/point> ?z .
+    ?a ?b ?x .
+    ?x ?c ?d
+  }
+#-------------------------------------------------------
+SELECT  ?x ?y
+WHERE
+  { ?x ?y <http://dbpedia.org/resource/Berlin> }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  ontology: <http://dbpedia.org/ontology/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?auteur ?p ?o
+WHERE
+  { :The_Da_Vinci_Code ontology:author ?auteur .
+    ?auteur ?p ?o
+  }
+#-------------------------------------------------------
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  dbprop: <http://dbpedia.org/property/>
+
+SELECT  ?job ?birthLoc
+WHERE
+  { ?person rdfs:label "George Washington"@en .
+    ?person dbprop:occupation ?job .
+    ?person dbprop:birthPlace ?birthLoc
+  }
+#-------------------------------------------------------
+SELECT  ?place ?pred
+WHERE
+  { ?place ?pred <http://dbpedia.org/resource/Restaurant> }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://mpii.de/yago/resource/>
+PREFIX  georss: <http://www.georss.org/georss/>
+PREFIX  umbel-ac: <http://umbel.org/umbel/ac/>
+PREFIX  geonames: <http://www.geonames.org/ontology#>
+PREFIX  units: <http://dbpedia.org/units/>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  gn:   <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  gnpt: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt#>
+PREFIX  umbel-sc: <http://umbel.org/umbel/sc/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  gnpt02: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt-02#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  wikicompany: <http://dbpedia.openlinksw.com/wikicompany/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  opencyc: <http://sw.opencyc.org/2008/06/10/concept/>
+
+SELECT  ?s
+WHERE
+  { <http://dbpedia.org/resource/Crowlin_Islands> rdf:type ?s }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://mpii.de/yago/resource/>
+PREFIX  georss: <http://www.georss.org/georss/>
+PREFIX  umbel-ac: <http://umbel.org/umbel/ac/>
+PREFIX  geonames: <http://www.geonames.org/ontology#>
+PREFIX  units: <http://dbpedia.org/units/>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  gn:   <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  gnpt: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt#>
+PREFIX  umbel-sc: <http://umbel.org/umbel/sc/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  gnpt02: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt-02#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  wikicompany: <http://dbpedia.openlinksw.com/wikicompany/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  opencyc: <http://sw.opencyc.org/2008/06/10/concept/>
+
+SELECT  ?s
+WHERE
+  { <http://dbpedia.org/resource/Eilean_Mhuire> rdf:type ?s }
+#-------------------------------------------------------
+SELECT  *
+WHERE
+  { ?Person <http://dbpedia.org/property/resides> <http://dbpedia.org/resource/London> .
+    ?Person <http://dbpedia.org/property/resides> ?Wohnort .
+    ?Person <http://dbpedia.org/property/weight> ?Weight
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  db-ont: <http://dbpedia.org/ontology/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  *
+WHERE
+  { ?id rdf:type db-ont:Film .
+    ?select dbpedia2:title ?ft .
+    ?id db-ont:imdbId ?imdb_id
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://mpii.de/yago/resource/>
+PREFIX  georss: <http://www.georss.org/georss/>
+PREFIX  umbel-ac: <http://umbel.org/umbel/ac/>
+PREFIX  geonames: <http://www.geonames.org/ontology#>
+PREFIX  units: <http://dbpedia.org/units/>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  gn:   <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  gnpt: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt#>
+PREFIX  umbel-sc: <http://umbel.org/umbel/sc/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  gnpt02: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt-02#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  wikicompany: <http://dbpedia.openlinksw.com/wikicompany/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  opencyc: <http://sw.opencyc.org/2008/06/10/concept/>
+
+SELECT  ?s
+WHERE
+  { ?s rdfs:label "Ayrton Senna"@en }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?sp
+WHERE
+  { ?sp rdf:type <http://dbpedia.org/ontology/SoccerPlayer> }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  *
+WHERE
+  { ?s1 skos:broader ?s2 .
+    ?s3 skos:broader ?s1 .
+    ?s4 skos:broader ?s3
+  }
+#-------------------------------------------------------
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  onto: <http://ontoTestFilms#>
+PREFIX  annot: <http://annotFilms#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  base: <http://ontoTestFilms>
+PREFIX  dbpedia: <http://dbpedia.org/ontology/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT  ?a ?b
+WHERE
+  { ?a rdf:type dbpedia:Band .
+    ?b rdf:type dbpedia:Film .
+    ?b dbpedia:musicComposer ?a
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  dbo:  <http://dbpedia.org/ontology/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?uri ?uri1 ?abstract ?uri2
+WHERE
+  { <http://dbpedia.org/resource/Category:Iron_Age_Europe> skos:broader ?uri .
+    ?uri skos:broader ?uri1 .
+    ?uri1 skos:broader ?uri2
+  }
+#-------------------------------------------------------
+SELECT  ?x
+WHERE
+  { ?x <http://www.georss.org/georss/point> ?z }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?name_la
+WHERE
+  { :Michael_Jackson foaf:givenname ?name_la }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  *
+WHERE
+  { :QuarkXPress skos:subject ?subj }
+#-------------------------------------------------------
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  dbprop: <http://dbpedia.org/property/>
+
+SELECT  ?job
+WHERE
+  { ?person rdfs:label "George Washington"@en .
+    ?person dbprop:occupation ?job .
+    ?person dbprop:birthPlace ?birthLoc
+  }
+#-------------------------------------------------------
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbo:  <http://dbpedia.org/ontology/>
+PREFIX  p:    <http://dbpedia.org/ontology/Person/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT  ?person
+WHERE
+  { ?person dbpedia2:deathDate ?deathDate }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  dbo:  <http://dbpedia.org/ontology/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?name ?birth ?death ?person
+WHERE
+  { ?person dbpedia2:birthPlace :Poland .
+    ?person dbo:birthDate ?birth .
+    ?person dbo:deathDate ?death
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  space: <http://purl.org/net/schemas/space/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?name ?image
+WHERE
+  { ?spacecraft foaf:name ?name .
+    ?spacecraft foaf:depiction ?image
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  dbo:  <http://dbpedia.org/ontology/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?uri ?uri1 ?abstract ?top
+WHERE
+  { <http://dbpedia.org/resource/Category:Iron_Age_Europe> skos:broader ?uri .
+    ?uri skos:broader ?uri1
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?placeLat ?placeLong
+WHERE
+  { :Montebelluna geo:lat ?placeLat .
+    :Montebelluna geo:long ?placeLong
+  }
+#-------------------------------------------------------
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia3: <http://dbpedia.org/resource/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://dbpedia.org/class/yago/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  category: <http://dbpedia.org/resource/Category:>
+PREFIX  dbo:  <http://dbpedia.org/property/>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  dbpprop: <http://dbpedia.org/property/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  *
+WHERE
+  { ?x foaf:name ?name .
+    ?x rdf:type dbpedia-owl:Artist .
+    ?x dbpedia-owl:nationality :Spain .
+    ?x dbpedia-owl:birthDate ?nacimiento
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?page ?name
+WHERE
+  { ?x foaf:page ?page .
+    ?x foaf:name ?name
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  dbprop: <http://dbpedia.org/property/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?p ?n ?l
+WHERE
+  { ?p dbpedia2:residence ?l .
+    ?p foaf:name ?n .
+    ?l rdfs:label "Brazil"@en
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://mpii.de/yago/resource/>
+PREFIX  georss: <http://www.georss.org/georss/>
+PREFIX  umbel-ac: <http://umbel.org/umbel/ac/>
+PREFIX  geonames: <http://www.geonames.org/ontology#>
+PREFIX  units: <http://dbpedia.org/units/>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  gn:   <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  gnpt: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt#>
+PREFIX  umbel-sc: <http://umbel.org/umbel/sc/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  gnpt02: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt-02#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  wikicompany: <http://dbpedia.openlinksw.com/wikicompany/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  opencyc: <http://sw.opencyc.org/2008/06/10/concept/>
+
+SELECT  ?s
+WHERE
+  { <http://dbpedia.org/resource/Kyshtym> rdf:type ?s }
+#-------------------------------------------------------
+SELECT  ?lat ?long
+WHERE
+  { <http://dbpedia.org/resource/Norway> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> ?lat .
+    <http://dbpedia.org/resource/Norway> <http://www.w3.org/2003/01/geo/wgs84_pos#long> ?long
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  *
+WHERE
+  { ?x rdf:type dbpedia-owl:Film }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  *
+WHERE
+  { ?subject skos:subject <http://dbpedia.org/resource/Category:The_Simpsons_episodes%2C_season_12> .
+    ?episode dbpedia2:blackboard ?chalkboard_gag
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  db-ont: <http://dbpedia.org/ontology/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  *
+WHERE
+  { ?select rdf:type db-ont:Film .
+    ?select dbpedia2:title ?ft .
+    ?id db-ont:imdbId ?imdb_id
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpo: <http://dbpedia.org/ontology/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  *
+WHERE
+  { ?artist rdf:type dbpo:MusicalArtist .
+    ?artist dbpedia2:genre :Blues .
+    ?artist dbpedia2:genre :Rock_and_roll
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  dbo:  <http://dbpedia.org/ontology/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?name ?birth ?death ?person
+WHERE
+  { ?person dbpedia2:birthPlace :Poland .
+    ?person dbo:birthDate ?birth .
+    ?person foaf:name ?name .
+    ?person dbo:deathDate ?death
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  dbo:  <http://dbpedia.org/ontology/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?name ?birth ?death ?person
+WHERE
+  { ?person dbo:birthPlace :Poland .
+    ?person dbo:birthDate ?birth .
+    ?person dbo:deathDate ?death
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpo: <http://dbpedia.org/ontology/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  *
+WHERE
+  { ?artist rdf:type dbpo:MusicalArtist .
+    ?artist dbpedia2:genre :Blues .
+    ?artist dbpedia2:genre :Rock_and_roll .
+    ?artist dbpedia2:genre :Rockabilly
+  }
+#-------------------------------------------------------
+SELECT  ?x ?a ?b ?z
+WHERE
+  { ?x <http://www.georss.org/georss/point> ?z .
+    ?a ?b ?x
+  }
+#-------------------------------------------------------
+PREFIX  db:   <http://dbpedia.org/resource/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  dbprop: <http://dbpedia.org/property/>
+
+SELECT  ?s ?o
+WHERE
+  { ?s dbpedia-owl:casNumber ?o }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://mpii.de/yago/resource/>
+PREFIX  georss: <http://www.georss.org/georss/>
+PREFIX  umbel-ac: <http://umbel.org/umbel/ac/>
+PREFIX  geonames: <http://www.geonames.org/ontology#>
+PREFIX  units: <http://dbpedia.org/units/>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  gn:   <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  gnpt: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt#>
+PREFIX  umbel-sc: <http://umbel.org/umbel/sc/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  gnpt02: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt-02#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  wikicompany: <http://dbpedia.openlinksw.com/wikicompany/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  opencyc: <http://sw.opencyc.org/2008/06/10/concept/>
+
+SELECT  ?s
+WHERE
+  { <http://dbpedia.org/resource/Livny> rdf:type ?s }
+#-------------------------------------------------------
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT  ?a
+WHERE
+  { ?a <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?Person }
+#-------------------------------------------------------
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  onto: <http://ontoTestFilms#>
+PREFIX  annot: <http://annotFilms#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  base: <http://ontoTestFilms>
+PREFIX  dbpedia: <http://dbpedia.org/ontology/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT  ?b
+WHERE
+  { ?c rdf:type dbpedia:Band .
+    ?b rdf:type dbpedia:Film .
+    <http://dbpedia.org/resource/The_Quarrymen> dbpedia:associatedBand ?c .
+    ?b dbpedia:musicComposer ?c
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?name
+WHERE
+  { ?x foaf:name ?name }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?prop ?m
+WHERE
+  { ?subject dbpedia2:starring :Tom_Cruise .
+    ?subject dbpedia2:director ?prop .
+    ?subject dbpedia2:title ?m
+  }
+#-------------------------------------------------------
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  onto: <http://ontoTestFilms#>
+PREFIX  annot: <http://annotFilms#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  base: <http://ontoTestFilms>
+PREFIX  dbpedia: <http://dbpedia.org/ontology/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT  ?b ?c
+WHERE
+  { ?b rdf:type dbpedia:Artist .
+    ?c rdf:type dbpedia:Film .
+    ?c dbpedia:starring <http://dbpedia.org/resource/Jean_Reno> .
+    ?c dbpedia:starring ?b
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?name
+WHERE
+  { ?name rdf:type <http://dbpedia.org/ontology/MusicalArtist> }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  db-ont: <http://dbpedia.org/ontology/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  *
+WHERE
+  { ?id rdf:type db-ont:Film .
+    ?id dbpedia2:title ?ft .
+    ?id db-ont:imdbId ?imdb_id
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://mpii.de/yago/resource/>
+PREFIX  georss: <http://www.georss.org/georss/>
+PREFIX  umbel-ac: <http://umbel.org/umbel/ac/>
+PREFIX  geonames: <http://www.geonames.org/ontology#>
+PREFIX  units: <http://dbpedia.org/units/>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  gn:   <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  gnpt: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt#>
+PREFIX  umbel-sc: <http://umbel.org/umbel/sc/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  gnpt02: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt-02#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  wikicompany: <http://dbpedia.openlinksw.com/wikicompany/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  opencyc: <http://sw.opencyc.org/2008/06/10/concept/>
+
+SELECT  ?s
+WHERE
+  { <http://dbpedia.org/resource/Zarechny%2C_Penza_Oblast> rdf:type ?s }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://mpii.de/yago/resource/>
+PREFIX  georss: <http://www.georss.org/georss/>
+PREFIX  umbel-ac: <http://umbel.org/umbel/ac/>
+PREFIX  geonames: <http://www.geonames.org/ontology#>
+PREFIX  units: <http://dbpedia.org/units/>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  gn:   <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  gnpt: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt#>
+PREFIX  umbel-sc: <http://umbel.org/umbel/sc/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  gnpt02: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt-02#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  wikicompany: <http://dbpedia.openlinksw.com/wikicompany/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  opencyc: <http://sw.opencyc.org/2008/06/10/concept/>
+
+SELECT  ?s
+WHERE
+  { <http://dbpedia.org/resource/Uglegorsk%2C_Sakhalin_Oblast> rdf:type ?s }
+#-------------------------------------------------------
+SELECT  *
+WHERE
+  { ?company <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Organisation> .
+    ?company <http://dbpedia.org/ontology/foundationPlace> <http://dbpedia.org/resource/California> .
+    ?product <http://dbpedia.org/ontology/developer> ?company .
+    ?product <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Software>
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  dbo:  <http://dbpedia.org/ontology/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?name ?birth ?death ?person
+WHERE
+  { ?person dbpedia2:birthPlace :Berlin .
+    ?person dbo:birthDate ?birth .
+    ?person foaf:name ?name .
+    ?person dbo:deathDate ?death
+  }
+#-------------------------------------------------------
+SELECT  *
+WHERE
+  { ?place <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Place> .
+    ?place <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.opengis.net/gml/_Feature> .
+    ?place <http://www.w3.org/2003/01/geo/wgs84_pos#lat> ?latitude .
+    ?place <http://www.w3.org/2003/01/geo/wgs84_pos#long> ?longitude .
+    ?place <http://www.w3.org/2000/01/rdf-schema#label> ?place_name
+  }
+#-------------------------------------------------------
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  dbprop: <http://dbpedia.org/property/>
+PREFIX  dbpedia: <http://dbpedia.org/ontology/>
+
+SELECT  ?movie
+WHERE
+  { ?movie <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> dbpedia:Film }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  PredicateFileGenerator: <http://dbpedia.org/ontology/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?inwoners
+WHERE
+  { :Amsterdam dbpedia2:populationTotal ?inwoners }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbonto: <http://dbpedia.org/ontology/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?film
+WHERE
+  { ?film skos:subject <http://dbpedia.org/resource/Category:Films_set_in_New_York_City> .
+    ?film dbonto:starring :Audrey_Hepburn
+  }
+#-------------------------------------------------------
+SELECT  *
+WHERE
+  { ?Person <http://dbpedia.org/property/resides> <http://dbpedia.org/resource/Greenwich%2C_Connecticut> .
+    ?Person <http://dbpedia.org/property/resides> ?Wohnort .
+    ?Person <http://dbpedia.org/property/weight> ?Weight
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://mpii.de/yago/resource/>
+PREFIX  georss: <http://www.georss.org/georss/>
+PREFIX  umbel-ac: <http://umbel.org/umbel/ac/>
+PREFIX  geonames: <http://www.geonames.org/ontology#>
+PREFIX  units: <http://dbpedia.org/units/>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  gn:   <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  gnpt: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt#>
+PREFIX  umbel-sc: <http://umbel.org/umbel/sc/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  gnpt02: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt-02#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  wikicompany: <http://dbpedia.openlinksw.com/wikicompany/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  opencyc: <http://sw.opencyc.org/2008/06/10/concept/>
+
+SELECT  ?s
+WHERE
+  { <http://dbpedia.org/resource/Strunino> rdf:type ?s }
+#-------------------------------------------------------
+SELECT  *
+WHERE
+  { ?Person <http://dbpedia.org/property/resides> <http://dbpedia.org/resource/New_York> .
+    ?Person <http://dbpedia.org/property/resides> ?Wohnort .
+    ?Person <http://dbpedia.org/property/weight> ?Weight
+  }
+#-------------------------------------------------------
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?film ?x ?y
+WHERE
+  { ?film skos:subject <http://dbpedia.org/resource/Category:American_films> .
+    ?film ?x ?y
+  }
+#-------------------------------------------------------
+SELECT  ?s
+WHERE
+  { ?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Actor> }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  dbpprop: <http://dbpedia.org/property/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?ven ?esp
+WHERE
+  { ?ven dbpedia2:birthplace :Venezuela .
+    ?esp dbpedia2:birthplace :Spain .
+    ?ven dbpedia2:birthdate ?fecha .
+    ?esp dbpedia2:birthdate ?fecha
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  ontology: <http://dbpedia.org/ontology/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?auteur ?age ?p ?o
+WHERE
+  { :The_Da_Vinci_Code ontology:author ?auteur .
+    ?auteur dbpedia2:dateOfBirth ?age .
+    ?auteur ?p ?o
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  dbo:  <http://dbpedia.org/ontology/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?name ?birth ?death ?person
+WHERE
+  { ?person dbpedia2:birthPlace :Berlin .
+    ?person dbo:birthDate ?birth .
+    ?person dbo:deathDate ?death
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  *
+WHERE
+  { :Oprah_Winfrey skos:subject ?subj }
+#-------------------------------------------------------
+SELECT  *
+WHERE
+  { ?company <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Organisation> .
+    ?company <http://dbpedia.org/ontology/foundationPlace> <http://dbpedia.org/resource/Washington> .
+    ?product <http://dbpedia.org/ontology/developer> ?company .
+    ?product <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Software>
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?book ?author
+WHERE
+  { ?book dbpedia2:author ?author }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://mpii.de/yago/resource/>
+PREFIX  georss: <http://www.georss.org/georss/>
+PREFIX  umbel-ac: <http://umbel.org/umbel/ac/>
+PREFIX  geonames: <http://www.geonames.org/ontology#>
+PREFIX  units: <http://dbpedia.org/units/>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  gn:   <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  gnpt: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt#>
+PREFIX  umbel-sc: <http://umbel.org/umbel/sc/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  gnpt02: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt-02#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  wikicompany: <http://dbpedia.openlinksw.com/wikicompany/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  opencyc: <http://sw.opencyc.org/2008/06/10/concept/>
+
+SELECT  ?s
+WHERE
+  { <http://dbpedia.org/resource/Virkie> rdf:type ?s }
+#-------------------------------------------------------
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  onto: <http://ontoTestFilms#>
+PREFIX  annot: <http://annotFilms#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  base: <http://ontoTestFilms>
+PREFIX  dbpedia: <http://dbpedia.org/ontology/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT  ?b ?c
+WHERE
+  { ?b rdf:type dbpedia:Artist .
+    ?c rdf:type dbpedia:Work .
+    ?c dbpedia:starring <http://dbpedia.org/resource/George_Harrison> .
+    ?c dbpedia:starring ?b
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?county
+WHERE
+  { ?county skos:subject <http://dbpedia.org/resource/Category:Cities_in_Texas> .
+    ?county skos:subject <http://dbpedia.org/resource/Category:County_seats_in_Texas>
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  *
+WHERE
+  { ?s1 skos:broader <http://dbpedia.org/resource/Category:Animals> .
+    ?s3 skos:broader ?s1 .
+    ?s4 skos:broader ?s3
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  db-ont: <http://dbpedia.org/ontology/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  *
+WHERE
+  { ?id rdf:type db-ont:Film .
+    ?id dbpedia2:label ?ft .
+    ?id db-ont:imdbId ?imdb_id
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?a ?b ?c
+WHERE
+  { :Peugeot ?b ?c .
+    ?a foaf:name "Peugeot S.A."@en
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://mpii.de/yago/resource/>
+PREFIX  georss: <http://www.georss.org/georss/>
+PREFIX  umbel-ac: <http://umbel.org/umbel/ac/>
+PREFIX  geonames: <http://www.geonames.org/ontology#>
+PREFIX  units: <http://dbpedia.org/units/>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  gn:   <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  gnpt: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt#>
+PREFIX  umbel-sc: <http://umbel.org/umbel/sc/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  gnpt02: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt-02#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  wikicompany: <http://dbpedia.openlinksw.com/wikicompany/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  opencyc: <http://sw.opencyc.org/2008/06/10/concept/>
+
+SELECT  ?s
+WHERE
+  { <http://dbpedia.org/resource/Petukhovo> rdf:type ?s }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://mpii.de/yago/resource/>
+PREFIX  georss: <http://www.georss.org/georss/>
+PREFIX  umbel-ac: <http://umbel.org/umbel/ac/>
+PREFIX  geonames: <http://www.geonames.org/ontology#>
+PREFIX  units: <http://dbpedia.org/units/>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  gn:   <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  gnpt: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt#>
+PREFIX  umbel-sc: <http://umbel.org/umbel/sc/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  gnpt02: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt-02#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  wikicompany: <http://dbpedia.openlinksw.com/wikicompany/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  opencyc: <http://sw.opencyc.org/2008/06/10/concept/>
+
+SELECT  ?s
+WHERE
+  { <http://dbpedia.org/resource/Pavlovo%2C_Nizhny_Novgorod_Oblast> rdf:type ?s }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?prop ?m
+WHERE
+  { ?subject dbpedia2:starring :Tom_Cruise .
+    ?subject dbpedia2:director ?prop .
+    ?subject ?m _:b0
+  }
+#-------------------------------------------------------
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT  *
+WHERE
+  { ?loc rdfs:label "Lansing (village), New York"@en .
+    ?loc ?x ?y
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?state ?mtn ?lat ?long
+WHERE
+  { ?state skos:subject <http://dbpedia.org/resource/Category:States_of_the_United_States> .
+    ?state dbpedia2:highestpoint ?mtn .
+    ?mtn geo:lat ?lat .
+    ?mtn geo:long ?long
+  }
+#-------------------------------------------------------
+SELECT  ?x ?a ?b
+WHERE
+  { ?x <http://www.georss.org/georss/point> ?z .
+    ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Place> .
+    ?x ?a ?b
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?cat ?cat1 ?sub
+WHERE
+  { ?cat skos:broader <http://dbpedia.org/resource/Category:Buildings_and_structures_in_France> .
+    ?cat skos:broader <http://dbpedia.org/resource/Category:Visitor_attractions_in_France> .
+    ?cat1 skos:broader ?cat .
+    ?sub skos:subject ?cat
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?actors
+WHERE
+  { ?actors rdf:type <http://dbpedia.org/ontology/Actor> }
+#-------------------------------------------------------
+SELECT  *
+WHERE
+  { <http://dbpedia.org/resource/Alabama> ?predicate ?object }
+#-------------------------------------------------------
+SELECT  ?s ?Concept
+WHERE
+  { ?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?Concept }
+#-------------------------------------------------------
+SELECT  ?shireCounty
+WHERE
+  { <http://dbpedia.org/resource/Glastonbury> <http://dbpedia.org/property/shireCounty> ?shireCounty }
+#-------------------------------------------------------
+SELECT  *
+WHERE
+  { ?x ?y <http://xmlns.com/foaf/0.1/Person> }
+#-------------------------------------------------------
+SELECT  ?s ?abstract
+WHERE
+  { <http://dbpedia.org/resource/Knut_Hamsun> <http://dbpedia.org/ontology/abstract> ?abstract .
+    ?s ?p ?abstract
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://mpii.de/yago/resource/>
+PREFIX  georss: <http://www.georss.org/georss/>
+PREFIX  umbel-ac: <http://umbel.org/umbel/ac/>
+PREFIX  geonames: <http://www.geonames.org/ontology#>
+PREFIX  units: <http://dbpedia.org/units/>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  gn:   <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  gnpt: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt#>
+PREFIX  umbel-sc: <http://umbel.org/umbel/sc/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  gnpt02: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt-02#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  wikicompany: <http://dbpedia.openlinksw.com/wikicompany/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  opencyc: <http://sw.opencyc.org/2008/06/10/concept/>
+
+SELECT  ?s
+WHERE
+  { <http://dbpedia.org/resource/Bogorodsk%2C_Nizhny_Novgorod_Oblast> rdf:type ?s }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?Person
+WHERE
+  { ?launch foaf:name ?date }
+#-------------------------------------------------------
+SELECT  ?shireCounty
+WHERE
+  { <http://dbpedia.org/resource/Tring> <http://dbpedia.org/property/shireCounty> ?shireCounty }
+#-------------------------------------------------------
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  type: <http://dbpedia.org/class/yago/>
+
+SELECT  ?country ?latitude
+WHERE
+  { ?country geo:lat ?latitude }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://mpii.de/yago/resource/>
+PREFIX  georss: <http://www.georss.org/georss/>
+PREFIX  umbel-ac: <http://umbel.org/umbel/ac/>
+PREFIX  geonames: <http://www.geonames.org/ontology#>
+PREFIX  units: <http://dbpedia.org/units/>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  gn:   <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  gnpt: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt#>
+PREFIX  umbel-sc: <http://umbel.org/umbel/sc/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  gnpt02: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt-02#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  wikicompany: <http://dbpedia.openlinksw.com/wikicompany/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  opencyc: <http://sw.opencyc.org/2008/06/10/concept/>
+
+SELECT  ?s
+WHERE
+  { ?s rdfs:label "Whiskey"@en }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://mpii.de/yago/resource/>
+PREFIX  georss: <http://www.georss.org/georss/>
+PREFIX  umbel-ac: <http://umbel.org/umbel/ac/>
+PREFIX  geonames: <http://www.geonames.org/ontology#>
+PREFIX  units: <http://dbpedia.org/units/>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  gn:   <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  gnpt: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt#>
+PREFIX  umbel-sc: <http://umbel.org/umbel/sc/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  gnpt02: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt-02#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  wikicompany: <http://dbpedia.openlinksw.com/wikicompany/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  opencyc: <http://sw.opencyc.org/2008/06/10/concept/>
+
+SELECT  ?s
+WHERE
+  { <http://dbpedia.org/resource/The_Calivari_Tale> rdf:type ?s }
+#-------------------------------------------------------
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  dbont: <http://dbpedia.org/ontology/>
+PREFIX  dbp:  <http://dbpedia.org/property/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT  ?name
+WHERE
+  { ?name rdf:type dbont:MusicalArtist }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?n
+WHERE
+  { ?x foaf:name ?n }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://mpii.de/yago/resource/>
+PREFIX  georss: <http://www.georss.org/georss/>
+PREFIX  umbel-ac: <http://umbel.org/umbel/ac/>
+PREFIX  geonames: <http://www.geonames.org/ontology#>
+PREFIX  units: <http://dbpedia.org/units/>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  gn:   <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  gnpt: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt#>
+PREFIX  umbel-sc: <http://umbel.org/umbel/sc/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  gnpt02: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt-02#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  wikicompany: <http://dbpedia.openlinksw.com/wikicompany/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  opencyc: <http://sw.opencyc.org/2008/06/10/concept/>
+
+SELECT  ?s
+WHERE
+  { <http://dbpedia.org/resource/Flodaigh%2C_Lewis> rdf:type ?s }
+#-------------------------------------------------------
+SELECT  ?value
+WHERE
+  { <http://dbpedia.org/resource/Lionel_Messi> <http://dbpedia.org/ontology/team> ?value }
+#-------------------------------------------------------
+SELECT  ?x ?a ?Concept
+WHERE
+  { ?x ?a ?Concept .
+    ?x <http://www.georss.org/georss/point> ?z
+  }
+#-------------------------------------------------------
+SELECT  *
+WHERE
+  { ?Person <http://dbpedia.org/property/resides> <http://dbpedia.org/resource/New_York> .
+    ?Person <http://dbpedia.org/property/resides> ?Wohnort
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  *
+WHERE
+  { ?company rdf:type <http://dbpedia.org/ontology/Organisation> .
+    ?company <http://dbpedia.org/ontology/foundationPlace> :California .
+    ?product <http://dbpedia.org/ontology/developer> ?company .
+    ?product rdf:type <http://dbpedia.org/ontology/Software>
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  *
+WHERE
+  { ?x skos:subject <http://dbpedia.org/resource/Category:Capitals_in_Europe> .
+    ?x dbpedia2:urbanPop ?y
+  }
+#-------------------------------------------------------
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  dbpo: <http://dbpedia.org/ontology/>
+PREFIX  dbpp: <http://dbpedia.org/property/>
+
+SELECT  *
+WHERE
+  { ?a <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> dbpo:Band }
+#-------------------------------------------------------
+SELECT  ?s
+WHERE
+  { ?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/MusicalArtist> }
+#-------------------------------------------------------
+SELECT  *
+WHERE
+  { ?company <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Organisation> .
+    ?company <http://dbpedia.org/ontology/foundationPlace> <http://dbpedia.org/resource/New_York> .
+    ?product <http://dbpedia.org/ontology/developer> ?company .
+    ?product <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Software>
+  }
+#-------------------------------------------------------
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  dbont: <http://dbpedia.org/ontology/>
+PREFIX  dbp:  <http://dbpedia.org/property/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT  ?name ?date
+WHERE
+  { ?name dbont:artist <http://dbpedia.org/resource/The_Beatles> .
+    ?name rdf:type dbont:Album .
+    ?name dbont:releaseDate ?date
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://mpii.de/yago/resource/>
+PREFIX  georss: <http://www.georss.org/georss/>
+PREFIX  umbel-ac: <http://umbel.org/umbel/ac/>
+PREFIX  geonames: <http://www.geonames.org/ontology#>
+PREFIX  units: <http://dbpedia.org/units/>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  gn:   <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  gnpt: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt#>
+PREFIX  umbel-sc: <http://umbel.org/umbel/sc/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  gnpt02: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt-02#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  wikicompany: <http://dbpedia.openlinksw.com/wikicompany/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  opencyc: <http://sw.opencyc.org/2008/06/10/concept/>
+
+SELECT  ?s
+WHERE
+  { <http://dbpedia.org/resource/Snezhinsk> rdf:type ?s }
+#-------------------------------------------------------
+SELECT  ?shireCounty
+WHERE
+  { <http://dbpedia.org/resource/Stewkley> <http://dbpedia.org/property/shireCounty> ?shireCounty }
+#-------------------------------------------------------
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  dbprop: <http://dbpedia.org/property/>
+
+SELECT  *
+WHERE
+  { ?person foaf:name ?name }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://mpii.de/yago/resource/>
+PREFIX  georss: <http://www.georss.org/georss/>
+PREFIX  umbel-ac: <http://umbel.org/umbel/ac/>
+PREFIX  geonames: <http://www.geonames.org/ontology#>
+PREFIX  units: <http://dbpedia.org/units/>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  gn:   <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  gnpt: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt#>
+PREFIX  umbel-sc: <http://umbel.org/umbel/sc/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  gnpt02: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt-02#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  wikicompany: <http://dbpedia.openlinksw.com/wikicompany/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  opencyc: <http://sw.opencyc.org/2008/06/10/concept/>
+
+SELECT  ?s
+WHERE
+  { <http://dbpedia.org/resource/Crown_Dependency_of_Forvik> rdf:type ?s }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?Person
+WHERE
+  { ?Person foaf:name ?date }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://mpii.de/yago/resource/>
+PREFIX  georss: <http://www.georss.org/georss/>
+PREFIX  umbel-ac: <http://umbel.org/umbel/ac/>
+PREFIX  geonames: <http://www.geonames.org/ontology#>
+PREFIX  units: <http://dbpedia.org/units/>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  gn:   <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  gnpt: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt#>
+PREFIX  umbel-sc: <http://umbel.org/umbel/sc/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  gnpt02: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt-02#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  wikicompany: <http://dbpedia.openlinksw.com/wikicompany/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  opencyc: <http://sw.opencyc.org/2008/06/10/concept/>
+
+SELECT  ?s
+WHERE
+  { <http://dbpedia.org/resource/Elektr%C4%97nai> rdf:type ?s }
+#-------------------------------------------------------
+SELECT  ?band
+WHERE
+  { ?band <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Band> }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://mpii.de/yago/resource/>
+PREFIX  georss: <http://www.georss.org/georss/>
+PREFIX  umbel-ac: <http://umbel.org/umbel/ac/>
+PREFIX  geonames: <http://www.geonames.org/ontology#>
+PREFIX  units: <http://dbpedia.org/units/>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  gn:   <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  gnpt: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt#>
+PREFIX  umbel-sc: <http://umbel.org/umbel/sc/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  gnpt02: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt-02#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  wikicompany: <http://dbpedia.openlinksw.com/wikicompany/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  opencyc: <http://sw.opencyc.org/2008/06/10/concept/>
+
+SELECT  ?s
+WHERE
+  { <http://dbpedia.org/resource/Weisdale_Mill> rdf:type ?s }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?cat ?sub ?abstract
+WHERE
+  { ?cat skos:broader <http://dbpedia.org/resource/Category:Palaces_in_France> .
+    ?sub skos:subject ?cat .
+    ?m dbpedia2:museum ?sub .
+    ?sub <http://dbpedia.org/ontology/abstract> ?abstract
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpo: <http://dbpedia.org/ontology/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  *
+WHERE
+  { ?artist rdf:type dbpo:MusicalArtist .
+    ?artist dbpedia2:genre :Hard_rock .
+    ?artist dbpedia2:genre :Thrash_metal .
+    ?artist dbpedia2:genre :Speed_metal
+  }
+#-------------------------------------------------------
+SELECT  ?x
+WHERE
+  { <http://en.wikipedia.org/wiki/South_Korea> <http://xmlns.com/foaf/0.1/primaryTopic> ?x }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?cat ?cat1 ?sub
+WHERE
+  { ?cat skos:broader <http://dbpedia.org/resource/Category:Buildings_and_structures_in_France> .
+    ?cat skos:broader <http://dbpedia.org/resource/Category:Visitor_attractions_in_France>
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?cat ?sub ?abstract
+WHERE
+  { ?cat skos:broader <http://dbpedia.org/resource/Category:Palaces_in_France> .
+    ?cat skos:broader <http://dbpedia.org/resource/Category:Museums_in_Paris>
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?symptom ?property ?disease
+WHERE
+  { { ?symptom ?property ?disease .
+      ?symptom skos:subject <http://dbpedia.org/resource/Category:Symptoms>
+    }
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  dbpprop: <http://dbpedia.org/property/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?birthDate ?birthPlace ?deathDate ?deathPlace ?abstract ?img ?yearsActive ?wikipedia ?birthPlaceName ?deathPlaceName ?birthPlaceWiki ?deathPlaceWiki ?name
+WHERE
+  { :Elvis_Presley rdfs:comment ?abstract .
+    :Elvis_Presley foaf:page ?wikipedia .
+    :Elvis_Presley rdfs:label ?name
+  }
+#-------------------------------------------------------
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?state ?mtn ?lat ?long
+WHERE
+  { ?state skos:subject <http://dbpedia.org/resource/Category:Official_historical_monuments_of_France> .
+    ?state geo:long ?long .
+    ?state geo:lat ?lat
+  }
+#-------------------------------------------------------
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  dbprop: <http://dbpedia.org/property/>
+
+SELECT  ?person ?job ?birthLoc
+WHERE
+  { ?person rdfs:label "George Washington"@en .
+    ?person dbprop:occupation ?job .
+    ?person dbprop:birthPlace ?birthLoc
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  *
+WHERE
+  { ?data rdf:type <http://dbpedia.org/ontology/FormulaOneRacer> .
+    ?wins <http://dbpedia.org/ontology/wins> 10
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  dbpprop: <http://dbpedia.org/property/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?birthDate ?birthPlace ?deathDate ?deathPlace ?abstract ?img ?yearsActive ?wikipedia ?birthPlaceName ?deathPlaceName ?birthPlaceWiki ?deathPlaceWiki
+WHERE
+  { :Elvis_Presley rdfs:comment ?abstract .
+    :Elvis_Presley foaf:page ?wikipedia .
+    :Elvis_Presley rdfs:label ?name
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  dbo:  <http://dbpedia.org/ontology/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?name ?weight
+WHERE
+  { ?Person rdf:type dbo:Wrestler .
+    ?Person dbpedia2:name ?name .
+    ?Person dbpedia2:weight ?weight
+  }
+#-------------------------------------------------------
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  type: <http://dbpedia.org/class/yago/>
+
+SELECT  ?country ?latitude
+WHERE
+  { ?country rdfs:label ?latitude }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  dbpediaontology: <http://dbpedia.org/ontology/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?What ?group
+WHERE
+  { ?group dbpedia2:currentMembers :Fred_Durst }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://mpii.de/yago/resource/>
+PREFIX  georss: <http://www.georss.org/georss/>
+PREFIX  umbel-ac: <http://umbel.org/umbel/ac/>
+PREFIX  geonames: <http://www.geonames.org/ontology#>
+PREFIX  units: <http://dbpedia.org/units/>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  gn:   <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  gnpt: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt#>
+PREFIX  umbel-sc: <http://umbel.org/umbel/sc/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  gnpt02: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt-02#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  wikicompany: <http://dbpedia.openlinksw.com/wikicompany/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  opencyc: <http://sw.opencyc.org/2008/06/10/concept/>
+
+SELECT  ?s
+WHERE
+  { <http://dbpedia.org/resource/Longay> rdf:type ?s }
+#-------------------------------------------------------
+SELECT  *
+WHERE
+  { ?motorway <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Road> }
+#-------------------------------------------------------
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  onto: <http://ontoTestFilms#>
+PREFIX  annot: <http://annotFilms#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  base: <http://ontoTestFilms>
+PREFIX  dbpedia: <http://dbpedia.org/ontology/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT  ?b
+WHERE
+  { ?b rdf:type dbpedia:Artist .
+    <http://dbpedia.org/resource/The_Da_Vinci_Code_%28film%29> dbpedia:starring <http://dbpedia.org/resource/Jean_Reno> .
+    <http://dbpedia.org/resource/The_Da_Vinci_Code_%28film%29> dbpedia:starring ?b
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://mpii.de/yago/resource/>
+PREFIX  georss: <http://www.georss.org/georss/>
+PREFIX  umbel-ac: <http://umbel.org/umbel/ac/>
+PREFIX  geonames: <http://www.geonames.org/ontology#>
+PREFIX  units: <http://dbpedia.org/units/>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  gn:   <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  gnpt: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt#>
+PREFIX  umbel-sc: <http://umbel.org/umbel/sc/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  gnpt02: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt-02#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  wikicompany: <http://dbpedia.openlinksw.com/wikicompany/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  opencyc: <http://sw.opencyc.org/2008/06/10/concept/>
+
+SELECT  ?s
+WHERE
+  { <http://dbpedia.org/resource/Volzhsky%2C_Volgograd_Oblast> rdf:type ?s }
+#-------------------------------------------------------
+SELECT  ?ville ?population ?personne
+WHERE
+  { ?ville <http://dbpedia.org/property/population> ?population .
+    ?personne <http://dbpedia.org/property/birthplace> ?ville .
+    ?personne <http://www.w3.org/2004/02/skos/core#subject> <http://dbpedia.org/resource/Category:French_film_directors>
+  }
+#-------------------------------------------------------
+SELECT  ?s ?o
+WHERE
+  { ?s <http://dbpedia.org/property/own> ?o }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?name ?surname
+WHERE
+  { :Michael_Jackson foaf:name ?name .
+    :Michael_Jackson foaf:surname ?surname
+  }
+#-------------------------------------------------------
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  onto: <http://ontoTestFilms#>
+PREFIX  annot: <http://annotFilms#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  base: <http://ontoTestFilms>
+PREFIX  dbpedia: <http://dbpedia.org/ontology/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT  ?a ?c
+WHERE
+  { ?b rdf:type dbpedia:Band .
+    ?c rdf:type dbpedia:Film .
+    <http://dbpedia.org/resource/The_Quarrymen> dbpedia:associatedBand ?b .
+    ?c dbpedia:musicComposer ?b
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  dbo:  <http://dbpedia.org/ontology/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?name ?weight ?birthdate
+WHERE
+  { ?Person rdf:type dbo:Model .
+    ?Person dbpedia2:name ?name .
+    ?Person dbpedia2:weight ?weight .
+    ?Person dbpedia2:birthdate ?birthdate
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  *
+WHERE
+  { ?player dbpedia2:team :AC_Milan }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?cat ?sub
+WHERE
+  { ?cat skos:broader <http://dbpedia.org/resource/Category:Palaces_in_France> .
+    ?sub skos:subject ?cat .
+    ?m dbpedia2:museum ?sub
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?relation
+WHERE
+  { :Barack_Obama ?relation :Michelle_Obama }
+#-------------------------------------------------------
+SELECT  ?x ?z
+WHERE
+  { ?x <http://www.w3.org/2000/01/rdf-schema#label> ?z }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  *
+WHERE
+  { ?x rdf:type ?y }
+#-------------------------------------------------------
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  db:   <http://dbpedia.org/ontology/>
+PREFIX  dbprop: <http://dbpedia.org/property/>
+PREFIX  resource: <http://dbpedia.org/resource/>
+
+SELECT  ?s ?abstract
+WHERE
+  { ?s dbprop:birthplace resource:Arendal .
+    ?s ?p ?abstract
+  }
+#-------------------------------------------------------
+SELECT  ?x ?b
+WHERE
+  { ?x <http://www.georss.org/georss/point> ?z .
+    ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?b
+  }
+#-------------------------------------------------------
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT  *
+WHERE
+  { ?person rdf:type foaf:Person }
+#-------------------------------------------------------
+SELECT  ?shireCounty
+WHERE
+  { <http://dbpedia.org/resource/Loughborough> <http://dbpedia.org/property/shireCounty> ?shireCounty }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  *
+WHERE
+  { ?s ?p foaf:Person }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://mpii.de/yago/resource/>
+PREFIX  georss: <http://www.georss.org/georss/>
+PREFIX  umbel-ac: <http://umbel.org/umbel/ac/>
+PREFIX  geonames: <http://www.geonames.org/ontology#>
+PREFIX  units: <http://dbpedia.org/units/>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  gn:   <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  gnpt: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt#>
+PREFIX  umbel-sc: <http://umbel.org/umbel/sc/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  gnpt02: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt-02#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  wikicompany: <http://dbpedia.openlinksw.com/wikicompany/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  opencyc: <http://sw.opencyc.org/2008/06/10/concept/>
+
+SELECT  ?s
+WHERE
+  { <http://dbpedia.org/resource/Partizansk> rdf:type ?s }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  *
+WHERE
+  { ?data rdf:type <http://dbpedia.org/ontology/FormulaOneRacer> .
+    ?data dbpedia2:wins ?wins
+  }
+#-------------------------------------------------------
+SELECT  ?a ?b
+WHERE
+  { ?a <http://www.w3.org/2004/02/skos/core#broader> ?b }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  dbo:  <http://dbpedia.org/ontology/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?film ?person
+WHERE
+  { ?film dbo:director ?person }
+#-------------------------------------------------------
+SELECT  ?ville ?population ?personne
+WHERE
+  { ?ville <http://dbpedia.org/property/population> ?population .
+    ?personne <http://dbpedia.org/property/birthplace> ?ville .
+    ?personne <http://www.w3.org/2004/02/skos/core#subject> <http://dbpedia.org/resource/Category:French_composers>
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  *
+WHERE
+  { :Michael_Jackson foaf:name ?name .
+    :Michael_Jackson foaf:surname ?surname
+  }
+#-------------------------------------------------------
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  prop: <http://dbpedia.org/property/>
+
+SELECT  ?nome ?nascimento
+WHERE
+  { <http://dbpedia.org/resource/Chris_Cooper_%28actor%29> prop:birthdate ?nascimento .
+    <http://dbpedia.org/resource/Chris_Cooper_%28actor%29> foaf:name ?nome
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?cat ?sub
+WHERE
+  { ?cat skos:broader <http://dbpedia.org/resource/Category:Palaces_in_France> .
+    ?sub skos:subject ?cat .
+    ?m dbpedia2:museum ?sub .
+    ?sub <http://dbpedia.org/ontology/abstract> ?abstract
+  }
+#-------------------------------------------------------
+SELECT  *
+WHERE
+  { ?s <http://dbpedia.org/property/wikilink> <http://dbpedia.org/resource/Partner_%28business_rank%29> }
+#-------------------------------------------------------
+SELECT  *
+WHERE
+  { ?company <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Organisation> .
+    ?product <http://dbpedia.org/ontology/manufacturer> ?company .
+    ?product <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Aircraft>
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  *
+WHERE
+  { :Munich <http://dbpedia.org/ontology/abstract> ?abstract .
+    :Munich rdfs:label ?name
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?presName ?z
+WHERE
+  { ?presName skos:subject ?z }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  *
+WHERE
+  { ?game skos:subject <http://dbpedia.org/resource/Category:First-person_shooters> .
+    ?game foaf:name ?title
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  space: <http://purl.org/net/schemas/space/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?name
+WHERE
+  { ?spacecraft foaf:name ?name }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?name
+WHERE
+  { :Michael_Jackson ?type foaf:Person .
+    ?person foaf:name ?name
+  }
+#-------------------------------------------------------
+SELECT  ?ville ?population ?personne
+WHERE
+  { ?ville <http://dbpedia.org/property/population> ?population .
+    ?personne <http://dbpedia.org/property/birthplace> ?ville .
+    ?personne <http://www.w3.org/2004/02/skos/core#subject> <http://dbpedia.org/resource/Category:Austrian_composers>
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  dbo:  <http://dbpedia.org/ontology/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?name ?birth ?death ?person
+WHERE
+  { ?city rdf:type dbo:City .
+    ?city skos:subject <http://dbpedia.org/resource/Category:German_state_capitals> .
+    ?city rdfs:label ?name
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?property ?isValueOf
+WHERE
+  { { ?isValueOf ?property <http://dbpedia.org/ontology/MusicalArtist> } }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?state ?lat ?long
+WHERE
+  { ?state skos:subject <http://dbpedia.org/resource/Category:Visitor_attractions_in_Zimbabwe> .
+    ?state geo:lat ?lat .
+    ?state geo:long ?long
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?def
+WHERE
+  { { ?disease skos:subject <http://dbpedia.org/resource/Category:Diseases_and_disorders> .
+      ?disease dbpedia2:meshname "Asthma"@en .
+      ?disease rdfs:comment ?def
+    }
+  }
+#-------------------------------------------------------
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  dbprop: <http://dbpedia.org/property/>
+
+SELECT  ?object
+WHERE
+  { ?person rdfs:label "George Washington"@en .
+    ?person ?prop ?object
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://dbpedia.org/class/yago/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbo:  <http://dbpedia.org/property/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  *
+WHERE
+  { ?x rdf:type dbpedia-owl:Actor }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  *
+WHERE
+  { { ?x rdf:type <http://dbpedia.org/ontology/Planet> } }
+#-------------------------------------------------------
+SELECT  *
+WHERE
+  { ?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Country> .
+    ?s ?p ?o
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  dbpr: <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpo: <http://dbpedia.org/ontology/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  *
+WHERE
+  { ?company rdf:type dbpo:Organisation .
+    ?company dbpo:foundationPlace dbpr:California .
+    ?product dbpo:developer ?company .
+    ?product rdf:type dbpo:Software
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  dbo:  <http://dbpedia.org/ontology/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?name ?birth ?death ?person
+WHERE
+  { ?person dbpedia2:birthPlace :Poland .
+    ?person dbpedia2:birthDate ?birth .
+    ?person dbpedia2:deathDate ?death
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://mpii.de/yago/resource/>
+PREFIX  georss: <http://www.georss.org/georss/>
+PREFIX  umbel-ac: <http://umbel.org/umbel/ac/>
+PREFIX  geonames: <http://www.geonames.org/ontology#>
+PREFIX  units: <http://dbpedia.org/units/>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  gn:   <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  gnpt: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt#>
+PREFIX  umbel-sc: <http://umbel.org/umbel/sc/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  gnpt02: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt-02#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  wikicompany: <http://dbpedia.openlinksw.com/wikicompany/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  opencyc: <http://sw.opencyc.org/2008/06/10/concept/>
+
+SELECT  ?s
+WHERE
+  { <http://dbpedia.org/resource/Yuzhno-Sukhokumsk> rdf:type ?s }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?name ?movie
+WHERE
+  { ?name rdf:type <http://dbpedia.org/ontology/Actor> }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?x ?y
+WHERE
+  { ?x dbpedia2:author ?y }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://mpii.de/yago/resource/>
+PREFIX  georss: <http://www.georss.org/georss/>
+PREFIX  umbel-ac: <http://umbel.org/umbel/ac/>
+PREFIX  geonames: <http://www.geonames.org/ontology#>
+PREFIX  units: <http://dbpedia.org/units/>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  gn:   <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  gnpt: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt#>
+PREFIX  umbel-sc: <http://umbel.org/umbel/sc/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  gnpt02: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt-02#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  wikicompany: <http://dbpedia.openlinksw.com/wikicompany/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  opencyc: <http://sw.opencyc.org/2008/06/10/concept/>
+
+SELECT  ?s
+WHERE
+  { <http://dbpedia.org/resource/Kogalym> rdf:type ?s }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  dbo:  <http://dbpedia.org/ontology/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?name ?birth ?person
+WHERE
+  { ?person dbpedia2:birthPlace :France .
+    ?person dbo:birthDate ?birth .
+    ?person foaf:name ?name
+  }
+#-------------------------------------------------------
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?state ?lat ?long
+WHERE
+  { ?state skos:subject <http://dbpedia.org/resource/Category:Official_historical_monuments_of_France> .
+    ?state geo:long ?long .
+    ?state geo:lat ?lat
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  db-ont: <http://dbpedia.org/ontology/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  *
+WHERE
+  { ?id db-ont:starring ?starring .
+    ?id db-ont:director ?director .
+    ?id rdf:type db-ont:Film .
+    ?id db-ont:imdbId ?imdb_id
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  *
+WHERE
+  { ?s1 skos:broader <http://dbpedia.org/resource/Category:Zoology> .
+    ?s3 skos:broader ?s1 .
+    ?s4 skos:broader ?s3
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://mpii.de/yago/resource/>
+PREFIX  georss: <http://www.georss.org/georss/>
+PREFIX  umbel-ac: <http://umbel.org/umbel/ac/>
+PREFIX  geonames: <http://www.geonames.org/ontology#>
+PREFIX  units: <http://dbpedia.org/units/>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  gn:   <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  gnpt: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt#>
+PREFIX  umbel-sc: <http://umbel.org/umbel/sc/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  gnpt02: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt-02#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  wikicompany: <http://dbpedia.openlinksw.com/wikicompany/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  opencyc: <http://sw.opencyc.org/2008/06/10/concept/>
+
+SELECT  ?s
+WHERE
+  { <http://dbpedia.org/resource/Raduzhny%2C_Vladimir_Oblast> rdf:type ?s }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://mpii.de/yago/resource/>
+PREFIX  georss: <http://www.georss.org/georss/>
+PREFIX  umbel-ac: <http://umbel.org/umbel/ac/>
+PREFIX  geonames: <http://www.geonames.org/ontology#>
+PREFIX  units: <http://dbpedia.org/units/>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  gn:   <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  gnpt: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt#>
+PREFIX  umbel-sc: <http://umbel.org/umbel/sc/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  gnpt02: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt-02#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  wikicompany: <http://dbpedia.openlinksw.com/wikicompany/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  opencyc: <http://sw.opencyc.org/2008/06/10/concept/>
+
+SELECT  ?s
+WHERE
+  { <http://dbpedia.org/resource/Ulan-Ude> rdf:type ?s }
+#-------------------------------------------------------
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  onto: <http://ontoTestFilms#>
+PREFIX  annot: <http://annotFilms#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  base: <http://ontoTestFilms>
+PREFIX  dbpedia: <http://dbpedia.org/ontology/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT  ?b ?c
+WHERE
+  { ?b rdf:type dbpedia:MusicalArtist .
+    ?c rdf:type dbpedia:Film .
+    ?b dbpedia:associatedBand <http://dbpedia.org/resource/The_Beatles> .
+    ?c dbpedia:musicComposer <http://dbpedia.org/resource/The_Beatles>
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://mpii.de/yago/resource/>
+PREFIX  georss: <http://www.georss.org/georss/>
+PREFIX  umbel-ac: <http://umbel.org/umbel/ac/>
+PREFIX  geonames: <http://www.geonames.org/ontology#>
+PREFIX  units: <http://dbpedia.org/units/>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  gn:   <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  gnpt: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt#>
+PREFIX  umbel-sc: <http://umbel.org/umbel/sc/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  gnpt02: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt-02#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  wikicompany: <http://dbpedia.openlinksw.com/wikicompany/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  opencyc: <http://sw.opencyc.org/2008/06/10/concept/>
+
+SELECT  ?s
+WHERE
+  { <http://dbpedia.org/resource/Ascrib_Islands> rdf:type ?s }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpo: <http://dbpedia.org/ontology/>
+PREFIX  dbpp: <http://dbpedia.org/property/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  *
+WHERE
+  { ?artist rdf:type dbpo:Band }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://mpii.de/yago/resource/>
+PREFIX  georss: <http://www.georss.org/georss/>
+PREFIX  umbel-ac: <http://umbel.org/umbel/ac/>
+PREFIX  geonames: <http://www.geonames.org/ontology#>
+PREFIX  units: <http://dbpedia.org/units/>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  gn:   <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  gnpt: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt#>
+PREFIX  umbel-sc: <http://umbel.org/umbel/sc/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  gnpt02: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt-02#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  wikicompany: <http://dbpedia.openlinksw.com/wikicompany/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  opencyc: <http://sw.opencyc.org/2008/06/10/concept/>
+
+SELECT  ?s
+WHERE
+  { <http://dbpedia.org/resource/Spassk-Dalny> rdf:type ?s }
+#-------------------------------------------------------
+SELECT  ?s
+WHERE
+  { ?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Film> }
+#-------------------------------------------------------
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  onto: <http://ontoTestFilms#>
+PREFIX  annot: <http://annotFilms#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  base: <http://ontoTestFilms>
+PREFIX  dbpedia: <http://dbpedia.org/ontology/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT  ?b ?c
+WHERE
+  { ?b rdf:type dbpedia:Film .
+    ?c rdf:type dbpedia:Artist .
+    ?b dbpedia:director <http://dbpedia.org/resource/Clint_Eastwood> .
+    ?b dbpedia:starring ?c
+  }
+#-------------------------------------------------------
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  onto: <http://ontoTestFilms#>
+PREFIX  annot: <http://annotFilms#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  base: <http://ontoTestFilms>
+PREFIX  dbpedia: <http://dbpedia.org/ontology/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT  ?b
+WHERE
+  { ?b rdf:type dbpedia:Artist .
+    <http://dbpedia.org/resource/Wasabi_%28film%29> dbpedia:starring <http://dbpedia.org/resource/Jean_Reno> .
+    <http://dbpedia.org/resource/Wasabi_%28film%29> dbpedia:starring ?b
+  }
+#-------------------------------------------------------
+SELECT  *
+WHERE
+  { ?motorway <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Road> .
+    ?motorway <http://dbpedia.org/ontology/length> ?length .
+    ?motorway <http://xmlns.com/foaf/0.1/name> ?name
+  }
+#-------------------------------------------------------
+SELECT  ?ville ?population ?personne
+WHERE
+  { ?ville <http://dbpedia.org/property/population> ?population .
+    ?personne <http://dbpedia.org/property/birthplace> ?ville .
+    ?personne <http://www.w3.org/2004/02/skos/core#subject> <http://dbpedia.org/resource/Category:English_composers>
+  }
+#-------------------------------------------------------
+SELECT  ?ville ?population
+WHERE
+  { ?ville ?p ?o .
+    ?ville <http://dbpedia.org/property/population> ?population
+  }
+#-------------------------------------------------------
+SELECT  *
+WHERE
+  { ?airport <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Airport> .
+    ?airport <http://dbpedia.org/ontology/iataLocationIdentifier> "IAD"@en
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://mpii.de/yago/resource/>
+PREFIX  georss: <http://www.georss.org/georss/>
+PREFIX  umbel-ac: <http://umbel.org/umbel/ac/>
+PREFIX  geonames: <http://www.geonames.org/ontology#>
+PREFIX  units: <http://dbpedia.org/units/>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  gn:   <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  gnpt: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt#>
+PREFIX  umbel-sc: <http://umbel.org/umbel/sc/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  gnpt02: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt-02#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  wikicompany: <http://dbpedia.openlinksw.com/wikicompany/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  opencyc: <http://sw.opencyc.org/2008/06/10/concept/>
+
+SELECT  ?s
+WHERE
+  { <http://dbpedia.org/resource/Desnogorsk> rdf:type ?s }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpo: <http://dbpedia.org/ontology/>
+PREFIX  dbpp: <http://dbpedia.org/property/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  *
+WHERE
+  { ?artist rdf:type dbpo:MusicalArtist }
+#-------------------------------------------------------
+SELECT  *
+WHERE
+  { ?stuff <http://dbpedia.org/property/name> ?name .
+    ?stuff <http://xmlns.com/foaf/0.1/page> ?page .
+    ?stuff <http://dbpedia.org/property/linelength> ?value
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?Who ?a ?b
+WHERE
+  { ?Who rdfs:label "Japan"@en .
+    ?Who ?a ?b
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  *
+WHERE
+  { :Michael_Jackson foaf:name ?name .
+    :Michael_Jackson foaf:surname ?surname .
+    :Michael_Jackson dc:description ?des
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://mpii.de/yago/resource/>
+PREFIX  georss: <http://www.georss.org/georss/>
+PREFIX  umbel-ac: <http://umbel.org/umbel/ac/>
+PREFIX  geonames: <http://www.geonames.org/ontology#>
+PREFIX  units: <http://dbpedia.org/units/>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  gn:   <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  gnpt: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt#>
+PREFIX  umbel-sc: <http://umbel.org/umbel/sc/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  gnpt02: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt-02#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  wikicompany: <http://dbpedia.openlinksw.com/wikicompany/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  opencyc: <http://sw.opencyc.org/2008/06/10/concept/>
+
+SELECT  ?s
+WHERE
+  { <http://dbpedia.org/resource/Eilean_Ighe> rdf:type ?s }
+#-------------------------------------------------------
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  prop: <http://dbpedia.org/property/>
+
+SELECT  ?nome ?nascimento ?lugar
+WHERE
+  { <http://dbpedia.org/resource/Chris_Cooper_%28actor%29> prop:birthdate ?nascimento .
+    <http://dbpedia.org/resource/Chris_Cooper_%28actor%29> foaf:name ?nome .
+    <http://dbpedia.org/resource/Chris_Cooper_%28actor%29> prop:birthplace ?lugar
+  }
+#-------------------------------------------------------
+PREFIX  dbpr: <http://dbpedia.org/resource/>
+PREFIX  dbpo: <http://dbpedia.org/ontology/>
+
+SELECT  *
+WHERE
+  { ?company <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> dbpo:Organisation .
+    ?company dbpo:foundationPlace dbpr:California .
+    ?product dbpo:developer ?company .
+    ?product <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> dbpo:Software
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?name
+WHERE
+  { ?person foaf:name ?name }
+#-------------------------------------------------------
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  db:   <http://dbpedia.org/ontology/>
+PREFIX  dbprop: <http://dbpedia.org/property/>
+PREFIX  resource: <http://dbpedia.org/resource/>
+
+SELECT  ?s ?p ?abstract
+WHERE
+  { ?s ?p resource:Arendal .
+    ?s ?p ?abstract
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?sl ?ml ?img
+WHERE
+  { ?s foaf:depiction ?img .
+    ?s skos:subject <http://dbpedia.org/resource/Category:Hieronymus_Bosch_paintings> .
+    ?s rdfs:label ?sl .
+    ?s dbpedia2:museum ?m .
+    ?m rdfs:label ?ml
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  *
+WHERE
+  { ?president skos:subject <http://dbpedia.org/resource/Category:Presidents_of_the_United_States> .
+    ?president <http://dbpedia.org/ontology/activeYearsStartDate> ?startDate .
+    ?president <http://dbpedia.org/ontology/activeYearsEndDate> ?endDate
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?prop
+WHERE
+  { ?subject dbpedia2:starring :Tom_Cruise .
+    ?subject ?prop _:b0
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?film ?person ?comm
+WHERE
+  { ?film skos:subject <http://dbpedia.org/resource/Category:French_films> .
+    ?film dbpedia2:producer ?person .
+    ?film rdfs:comment ?comm
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  dbpprop: <http://dbpedia.org/property/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?ven ?esp ?fecha
+WHERE
+  { ?ven dbpedia2:birthplace :Venezuela .
+    ?esp dbpedia2:birthplace :Spain .
+    ?ven dbpedia2:birthdate ?fecha .
+    ?esp dbpedia2:birthdate ?fecha
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?sl ?img
+WHERE
+  { ?s foaf:depiction ?img .
+    ?s skos:subject <http://dbpedia.org/resource/Category:Hieronymus_Bosch_paintings> .
+    ?s rdfs:label ?sl
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  *
+WHERE
+  { ?x rdf:type ?z }
+#-------------------------------------------------------
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT  ?name
+WHERE
+  { ?person foaf:name ?name }
+#-------------------------------------------------------
+PREFIX  dbpr: <http://dbpedia.org/resource/>
+PREFIX  dbpo: <http://dbpedia.org/ontology/>
+PREFIX  dbpp: <http://dbpedia.org/property/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT  ?loc
+WHERE
+  { ?loc dbpp:commonName "Egypt"@en }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  *
+WHERE
+  { :Access_management skos:subject ?subj }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?cat ?cat1 ?sub
+WHERE
+  { ?cat skos:broader <http://dbpedia.org/resource/Category:Buildings_and_structures_in_France> .
+    ?cat skos:broader <http://dbpedia.org/resource/Category:Visitor_attractions_in_France> .
+    ?sub skos:subject ?cat
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?film
+WHERE
+  { ?film rdf:type <http://dbpedia.org/ontology/HistoricPlace> }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://mpii.de/yago/resource/>
+PREFIX  georss: <http://www.georss.org/georss/>
+PREFIX  umbel-ac: <http://umbel.org/umbel/ac/>
+PREFIX  geonames: <http://www.geonames.org/ontology#>
+PREFIX  units: <http://dbpedia.org/units/>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  gn:   <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  gnpt: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt#>
+PREFIX  umbel-sc: <http://umbel.org/umbel/sc/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  gnpt02: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt-02#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  wikicompany: <http://dbpedia.openlinksw.com/wikicompany/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  opencyc: <http://sw.opencyc.org/2008/06/10/concept/>
+
+SELECT  ?s
+WHERE
+  { <http://dbpedia.org/resource/Heston_Aerodrome> rdf:type ?s }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://mpii.de/yago/resource/>
+PREFIX  georss: <http://www.georss.org/georss/>
+PREFIX  umbel-ac: <http://umbel.org/umbel/ac/>
+PREFIX  geonames: <http://www.geonames.org/ontology#>
+PREFIX  units: <http://dbpedia.org/units/>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  gn:   <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  gnpt: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt#>
+PREFIX  umbel-sc: <http://umbel.org/umbel/sc/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  gnpt02: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt-02#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  wikicompany: <http://dbpedia.openlinksw.com/wikicompany/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  opencyc: <http://sw.opencyc.org/2008/06/10/concept/>
+
+SELECT  ?s
+WHERE
+  { <http://dbpedia.org/resource/Usolye-Sibirskoye> rdf:type ?s }
+#-------------------------------------------------------
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  onto: <http://ontoTestFilms#>
+PREFIX  annot: <http://annotFilms#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  base: <http://ontoTestFilms>
+PREFIX  dbpedia: <http://dbpedia.org/ontology/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT  ?a ?c
+WHERE
+  { ?a rdf:type dbpedia:Band .
+    ?c rdf:type dbpedia:Film .
+    <http://dbpedia.org/resource/Robin_Gibb> dbpedia:associatedBand ?a .
+    ?c dbpedia:musicComposer ?a
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?author
+WHERE
+  { ?book dbpedia2:author ?author }
+#-------------------------------------------------------
+SELECT  *
+WHERE
+  { <http://dbpedia.org/resource/Paula_Creamer> ?y ?z .
+    ?z ?a ?b
+  }
+#-------------------------------------------------------
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  dbont: <http://dbpedia.org/ontology/>
+PREFIX  dbp:  <http://dbpedia.org/property/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT  ?name ?album
+WHERE
+  { ?name dbont:artist <http://dbpedia.org/resource/The_Beatles> .
+    ?album rdf:type dbont:Album
+  }
+#-------------------------------------------------------
+SELECT  ?x ?z
+WHERE
+  { ?x ?z <http://dbpedia.org/ontology/Place> }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  do:   <http://dbpedia.org/ontology/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?x
+WHERE
+  { ?x rdf:type do:Actor }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?country
+WHERE
+  { ?country rdf:type <http://dbpedia.org/ontology/Town> }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?p ?o
+WHERE
+  { ?dbactor rdfs:label "Naomi Watts"@en .
+    ?dbactor ?p ?o
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://mpii.de/yago/resource/>
+PREFIX  georss: <http://www.georss.org/georss/>
+PREFIX  umbel-ac: <http://umbel.org/umbel/ac/>
+PREFIX  geonames: <http://www.geonames.org/ontology#>
+PREFIX  units: <http://dbpedia.org/units/>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  gn:   <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  gnpt: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt#>
+PREFIX  umbel-sc: <http://umbel.org/umbel/sc/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  gnpt02: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt-02#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  wikicompany: <http://dbpedia.openlinksw.com/wikicompany/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  opencyc: <http://sw.opencyc.org/2008/06/10/concept/>
+
+SELECT  ?s
+WHERE
+  { <http://dbpedia.org/resource/Millerovo> rdf:type ?s }
+#-------------------------------------------------------
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbprop: <http://dbpedia.org/property/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+
+SELECT  ?prop ?object
+WHERE
+  { ?person rdfs:label "George Washington"@en .
+    ?person dbprop:presidentStart ?start .
+    ?person ?prop ?object
+  }
+#-------------------------------------------------------
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  dbpo: <http://dbpedia.org/ontology/>
+PREFIX  dbpp: <http://dbpedia.org/property/>
+
+SELECT  *
+WHERE
+  { ?a <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> dbpo:MusicalArtist }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?s ?p
+WHERE
+  { ?s ?p <http://dbpedia.org/ontology/MusicalArtist> }
+#-------------------------------------------------------
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  dbpo: <http://dbpedia.org/ontology/>
+PREFIX  dbpp: <http://dbpedia.org/property/>
+
+SELECT  *
+WHERE
+  { ?artist <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> dbpo:MusicalArtist }
+#-------------------------------------------------------
+PREFIX  dbp:  <http://dbpedia.org/resource/>
+PREFIX  dbp2: <http://dbpedia.org/ontology/>
+
+SELECT  ?abstract
+WHERE
+  { dbp:John_Squire dbp2:birthDate ?abstract }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://mpii.de/yago/resource/>
+PREFIX  georss: <http://www.georss.org/georss/>
+PREFIX  umbel-ac: <http://umbel.org/umbel/ac/>
+PREFIX  geonames: <http://www.geonames.org/ontology#>
+PREFIX  units: <http://dbpedia.org/units/>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  gn:   <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  gnpt: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt#>
+PREFIX  umbel-sc: <http://umbel.org/umbel/sc/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  gnpt02: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt-02#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  wikicompany: <http://dbpedia.openlinksw.com/wikicompany/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  opencyc: <http://sw.opencyc.org/2008/06/10/concept/>
+
+SELECT  ?s
+WHERE
+  { <http://dbpedia.org/resource/Novokuybyshevsk> rdf:type ?s }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  *
+WHERE
+  { <http://dbpedia.org/resource/Homogenization_%28chemistry%29> skos:subject ?subj }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  *
+WHERE
+  { ?obj rdf:type ?qls }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  dbo:  <http://dbpedia.org/ontology/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?film ?person
+WHERE
+  { ?film dbo:imdbId ?person }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?name ?def
+WHERE
+  { { ?disease skos:subject <http://dbpedia.org/resource/Category:Diseases_and_disorders> .
+      ?disease dbpedia2:meshname "Asthma"@en .
+      ?disease rdfs:comment ?def
+    }
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?place
+WHERE
+  { ?place rdf:type <http://dbpedia.org/ontology/Place> .
+    ?place rdf:type <http://dbpedia.org/ontology/City>
+  }
+#-------------------------------------------------------
+SELECT  ?x ?a ?b
+WHERE
+  { ?x ?z <http://dbpedia.org/ontology/Place> .
+    ?x ?a ?b
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://mpii.de/yago/resource/>
+PREFIX  georss: <http://www.georss.org/georss/>
+PREFIX  umbel-ac: <http://umbel.org/umbel/ac/>
+PREFIX  geonames: <http://www.geonames.org/ontology#>
+PREFIX  units: <http://dbpedia.org/units/>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  gn:   <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  gnpt: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt#>
+PREFIX  umbel-sc: <http://umbel.org/umbel/sc/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  gnpt02: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt-02#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  wikicompany: <http://dbpedia.openlinksw.com/wikicompany/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  opencyc: <http://sw.opencyc.org/2008/06/10/concept/>
+
+SELECT  ?s
+WHERE
+  { <http://dbpedia.org/resource/Fuaigh_Beag> rdf:type ?s }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://mpii.de/yago/resource/>
+PREFIX  georss: <http://www.georss.org/georss/>
+PREFIX  umbel-ac: <http://umbel.org/umbel/ac/>
+PREFIX  geonames: <http://www.geonames.org/ontology#>
+PREFIX  units: <http://dbpedia.org/units/>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  gn:   <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  gnpt: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt#>
+PREFIX  umbel-sc: <http://umbel.org/umbel/sc/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  gnpt02: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt-02#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  wikicompany: <http://dbpedia.openlinksw.com/wikicompany/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  opencyc: <http://sw.opencyc.org/2008/06/10/concept/>
+
+SELECT  ?s
+WHERE
+  { ?s rdfs:label "Rios"@en }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  dbpprop: <http://dbpedia.org/property/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?birthDate ?birthPlace ?deathDate ?deathPlace ?abstract ?img ?yearsActive ?wikipedia ?birthPlaceName ?deathPlaceName ?birthPlaceWiki ?deathPlaceWiki
+WHERE
+  { :Elvis_Costello rdfs:comment ?abstract .
+    :Elvis_Costello foaf:page ?wikipedia
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?places
+WHERE
+  { ?places <http://dbpedia.org/ontology/location> :Germany .
+    ?mon <http://dbpedia.org/ontology/location> ?places
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?cat ?sub ?abstract
+WHERE
+  { ?cat skos:broader <http://dbpedia.org/resource/Category:Palaces_in_France> .
+    ?cat skos:broader <http://dbpedia.org/resource/Category:Museums_in_Paris> .
+    ?sub skos:subject ?cat .
+    ?sub <http://dbpedia.org/ontology/abstract> ?abstract
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?x ?name
+WHERE
+  { ?x foaf:name ?name }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://mpii.de/yago/resource/>
+PREFIX  georss: <http://www.georss.org/georss/>
+PREFIX  umbel-ac: <http://umbel.org/umbel/ac/>
+PREFIX  geonames: <http://www.geonames.org/ontology#>
+PREFIX  units: <http://dbpedia.org/units/>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  gn:   <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  gnpt: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt#>
+PREFIX  umbel-sc: <http://umbel.org/umbel/sc/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  gnpt02: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt-02#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  wikicompany: <http://dbpedia.openlinksw.com/wikicompany/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  opencyc: <http://sw.opencyc.org/2008/06/10/concept/>
+
+SELECT  ?s
+WHERE
+  { <http://dbpedia.org/resource/Chebarkul> rdf:type ?s }
+#-------------------------------------------------------
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  dbprop: <http://dbpedia.org/property/>
+
+SELECT  ?picture
+WHERE
+  { ?person rdfs:label "George Washington"@en .
+    ?person dbprop:occupation ?job .
+    ?person dbprop:birthPlace ?birthLoc .
+    ?person foaf:depiction ?picture
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  db-ont: <http://dbpedia.org/ontology/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  *
+WHERE
+  { ?select rdf:type db-ont:Film .
+    ?id dbpedia2:title ?ft .
+    ?id db-ont:imdbId ?imdb_id
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?sl ?img
+WHERE
+  { ?s foaf:depiction ?img .
+    ?s skos:subject <http://dbpedia.org/resource/Category:Hieronymus_Bosch_paintings> .
+    ?s rdfs:label ?sl .
+    ?s dbpedia2:museum ?m
+  }
+#-------------------------------------------------------
+SELECT  *
+WHERE
+  { <http://dbpedia.org/resource/Lionel_Messi> ?value ?value1 }
+#-------------------------------------------------------
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia3: <http://dbpedia.org/resource/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://dbpedia.org/class/yago/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  category: <http://dbpedia.org/resource/Category:>
+PREFIX  dbo:  <http://dbpedia.org/property/>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  dbpprop: <http://dbpedia.org/property/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  *
+WHERE
+  { ?x foaf:name ?name .
+    ?x rdf:type dbpedia-owl:Artist .
+    ?x dbpedia-owl:nationality :Spain .
+    ?x dbpedia-owl:birthDate ?nacimiento .
+    ?x dbpedia-owl:deathDate ?fallecimiento
+  }
+#-------------------------------------------------------
+SELECT  ?name ?abs
+WHERE
+  { <http://dbpedia.org/resource/Ljubljana> <http://dbpedia.org/property/officialName> ?name }
+#-------------------------------------------------------
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  onto: <http://ontoTestFilms#>
+PREFIX  annot: <http://annotFilms#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  base: <http://ontoTestFilms>
+PREFIX  dbpedia: <http://dbpedia.org/ontology/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT  ?c
+WHERE
+  { ?b rdf:type dbpedia:Band .
+    ?c rdf:type dbpedia:Film .
+    <http://dbpedia.org/resource/The_Quarrymen> dbpedia:associatedBand ?b .
+    ?c dbpedia:musicComposer ?b
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  dbo:  <http://dbpedia.org/ontology/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?uri ?abstract
+WHERE
+  { ?uri skos:broader <http://dbpedia.org/resource/Category:Iron_Age_Europe> .
+    ?uri1 skos:broader ?uri
+  }
+#-------------------------------------------------------
+SELECT  ?p ?o
+WHERE
+  { ?s <http://dbpedia.org/property/redirect> ?o }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  *
+WHERE
+  { :University_of_Washington_Michael_G._Foster_School_of_Business skos:subject ?subj }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  PredicateFileGenerator: <http://dbpedia.org/ontology/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?person ?o
+WHERE
+  { ?person ?o :Amsterdam }
+#-------------------------------------------------------
+SELECT  ?lat ?long
+WHERE
+  { ?country <http://www.w3.org/2000/01/rdf-schema#label> "United Kingdom"@en .
+    ?country <http://dbpedia.org/property/capital> ?capital .
+    ?capital <http://www.w3.org/2003/01/geo/wgs84_pos#lat> ?lat .
+    ?capital <http://www.w3.org/2003/01/geo/wgs84_pos#long> ?long
+  }
+#-------------------------------------------------------
+PREFIX  :     <http://www.codesupreme.com/onto/cse7392/#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT  *
+WHERE
+  { ?n <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> foaf:Person }
+#-------------------------------------------------------
+PREFIX  onto: <http://ontoTestFilms#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  annot: <http://annotFilms#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  base: <http://ontoTestFilms>
+PREFIX  dbpedia: <http://dbpedia.org/ontology/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT  ?b ?c
+WHERE
+  { ?b rdf:type dbpedia:Artist .
+    ?c rdf:type dbpedia:Film .
+    ?c dbpedia:starring <http://dbpedia.org/resource/Jean_Reno> .
+    ?c dbpedia:starring ?b
+  }
+#-------------------------------------------------------
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  p:    <http://dbpedia.org/property/>
+PREFIX  o:    <http://dbpedia.org/ontology/>
+
+SELECT  *
+WHERE
+  { <http://dbpedia.org/resource/United_Kingdom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> o:Country .
+    <http://dbpedia.org/resource/United_Kingdom> o:capital ?capital
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  *
+WHERE
+  { :Windows_Malicious_Software_Removal_Tool skos:subject ?subj }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://mpii.de/yago/resource/>
+PREFIX  georss: <http://www.georss.org/georss/>
+PREFIX  umbel-ac: <http://umbel.org/umbel/ac/>
+PREFIX  geonames: <http://www.geonames.org/ontology#>
+PREFIX  units: <http://dbpedia.org/units/>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  gn:   <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  gnpt: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt#>
+PREFIX  umbel-sc: <http://umbel.org/umbel/sc/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  gnpt02: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt-02#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  wikicompany: <http://dbpedia.openlinksw.com/wikicompany/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  opencyc: <http://sw.opencyc.org/2008/06/10/concept/>
+
+SELECT  ?s
+WHERE
+  { <http://dbpedia.org/resource/Mologa> rdf:type ?s }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://mpii.de/yago/resource/>
+PREFIX  georss: <http://www.georss.org/georss/>
+PREFIX  umbel-ac: <http://umbel.org/umbel/ac/>
+PREFIX  geonames: <http://www.geonames.org/ontology#>
+PREFIX  units: <http://dbpedia.org/units/>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  gn:   <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  gnpt: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt#>
+PREFIX  umbel-sc: <http://umbel.org/umbel/sc/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  gnpt02: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt-02#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  wikicompany: <http://dbpedia.openlinksw.com/wikicompany/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  opencyc: <http://sw.opencyc.org/2008/06/10/concept/>
+
+SELECT  ?s
+WHERE
+  { <http://dbpedia.org/resource/Digora> rdf:type ?s }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?cat ?cat1
+WHERE
+  { ?cat skos:broader <http://dbpedia.org/resource/Category:Buildings_and_structures_in_Europe> .
+    ?cat1 skos:broader ?cat
+  }
+#-------------------------------------------------------
+SELECT  ?x ?Concept
+WHERE
+  { ?x ?a ?Concept .
+    ?x <http://www.georss.org/georss/point> ?z
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?cat ?sub ?abstract
+WHERE
+  { ?cat skos:broader <http://dbpedia.org/resource/Category:Palaces_in_France> .
+    ?cat skos:broader <http://dbpedia.org/resource/Category:Museums_in_Paris> .
+    ?sub skos:subject ?cat .
+    ?m dbpedia2:museum ?sub .
+    ?sub <http://dbpedia.org/ontology/abstract> ?abstract
+  }
+#-------------------------------------------------------
+PREFIX  prop: <http://dbpedia.org/property/>
+
+SELECT  ?o
+WHERE
+  { <http://dbpedia.org/resource/Chris_Cooper_%28actor%29> prop:birthdate ?o }
+#-------------------------------------------------------
+SELECT  ?s ?p
+WHERE
+  { ?s ?p <http://xmlns.com/foaf/0.1/Person> }
+#-------------------------------------------------------
+SELECT  *
+WHERE
+  { ?motorway <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Road> .
+    ?product <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Software>
+  }
+#-------------------------------------------------------
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia3: <http://dbpedia.org/resource/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://dbpedia.org/class/yago/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  category: <http://dbpedia.org/resource/Category:>
+PREFIX  dbo:  <http://dbpedia.org/property/>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  dbpprop: <http://dbpedia.org/property/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  *
+WHERE
+  { ?x foaf:name ?name .
+    ?x rdf:type dbpedia-owl:Artist .
+    ?x dbpedia-owl:nationality :Spain .
+    ?x dbpedia2:dateOfBirth ?nacimiento
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?name ?weight
+WHERE
+  { ?Person dbpedia2:placeOfBirth :Seattle .
+    ?Person dbpedia2:name ?name .
+    ?Person dbpedia2:weight ?weight
+  }
+#-------------------------------------------------------
+SELECT  *
+WHERE
+  { ?company <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Organisation> .
+    ?company <http://dbpedia.org/ontology/foundationPlace> <http://dbpedia.org/resource/Germany> .
+    ?product <http://dbpedia.org/ontology/developer> ?company .
+    ?product <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Software>
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  db-ont: <http://dbpedia.org/ontology/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  *
+WHERE
+  { ?id db-ont:starring ?starring .
+    ?id rdf:type db-ont:Film .
+    ?id db-ont:imdbId ?imdb_id
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://mpii.de/yago/resource/>
+PREFIX  georss: <http://www.georss.org/georss/>
+PREFIX  umbel-ac: <http://umbel.org/umbel/ac/>
+PREFIX  geonames: <http://www.geonames.org/ontology#>
+PREFIX  units: <http://dbpedia.org/units/>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  gn:   <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  gnpt: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt#>
+PREFIX  umbel-sc: <http://umbel.org/umbel/sc/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  gnpt02: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt-02#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  wikicompany: <http://dbpedia.openlinksw.com/wikicompany/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  opencyc: <http://sw.opencyc.org/2008/06/10/concept/>
+
+SELECT  ?s
+WHERE
+  { <http://dbpedia.org/resource/The_Cumbraes> rdf:type ?s }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?cat ?sub ?abstract
+WHERE
+  { ?cat skos:broader <http://dbpedia.org/resource/Category:Palaces_in_France> .
+    ?sub skos:subject ?cat .
+    ?sub <http://dbpedia.org/ontology/abstract> ?abstract
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?film ?y
+WHERE
+  { ?film rdfs:label ?y }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?p ?o
+WHERE
+  { ?dbactor dbpedia2:name "Kate Winslet"@en .
+    ?dbactor ?p ?o
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  *
+WHERE
+  { ?s ?p "Golden Eye"@en }
+#-------------------------------------------------------
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT  *
+WHERE
+  { ?loc rdfs:label "Lansing, New York"@en .
+    ?loc ?x ?y
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?p ?o
+WHERE
+  { ?dbactor rdfs:label "Kate Winslet"@en .
+    ?dbactor ?p ?o
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  dbpprop: <http://dbpedia.org/property/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?birthDate ?birthPlace ?deathDate ?deathPlace ?abstract ?img ?yearsActive ?wikipedia ?birthPlaceName ?deathPlaceName ?birthPlaceWiki ?deathPlaceWiki
+WHERE
+  { :Elvis_Presley rdfs:comment ?abstract .
+    :Elvis_Presley foaf:page ?wikipedia
+  }
+#-------------------------------------------------------
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  onto: <http://ontoTestFilms#>
+PREFIX  annot: <http://annotFilms#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  base: <http://ontoTestFilms>
+PREFIX  dbpedia: <http://dbpedia.org/ontology/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT  ?b ?c
+WHERE
+  { ?b rdf:type dbpedia:Artist .
+    ?c rdf:type dbpedia:Film .
+    ?c dbpedia:starring <http://dbpedia.org/resource/George_Harrison> .
+    ?c dbpedia:starring ?b
+  }
+#-------------------------------------------------------
+SELECT  *
+WHERE
+  { ?company <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Organisation> .
+    ?product ?relation ?company .
+    ?product <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Aircraft>
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?symptom ?property ?disease
+WHERE
+  { { ?symptom ?property ?disease .
+      ?disease skos:subject <http://dbpedia.org/resource/Category:Diseases_and_disorders> .
+      ?symptom skos:subject <http://dbpedia.org/resource/Category:Symptoms>
+    }
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://mpii.de/yago/resource/>
+PREFIX  georss: <http://www.georss.org/georss/>
+PREFIX  umbel-ac: <http://umbel.org/umbel/ac/>
+PREFIX  geonames: <http://www.geonames.org/ontology#>
+PREFIX  units: <http://dbpedia.org/units/>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  gn:   <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  gnpt: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt#>
+PREFIX  umbel-sc: <http://umbel.org/umbel/sc/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  gnpt02: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt-02#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  wikicompany: <http://dbpedia.openlinksw.com/wikicompany/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  opencyc: <http://sw.opencyc.org/2008/06/10/concept/>
+
+SELECT  ?s
+WHERE
+  { <http://dbpedia.org/resource/Soay_Sound> rdf:type ?s }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  *
+WHERE
+  { :Michael_Jackson foaf:name ?name .
+    :Michael_Jackson foaf:surname ?surname .
+    :Michael_Jackson dc:description ?des .
+    :Michael_Jackson skos:subject ?sub
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpo: <http://dbpedia.org/ontology/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  *
+WHERE
+  { ?artist rdf:type dbpo:MusicalArtist }
+#-------------------------------------------------------
+SELECT  *
+WHERE
+  { <http://dbpedia.org/resource/Partner> <http://dbpedia.org/property/disambiguates> ?result }
+#-------------------------------------------------------
+PREFIX  onto: <http://ontoTestFilms#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  annot: <http://annotFilms#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  base: <http://ontoTestFilms>
+PREFIX  dbpedia: <http://dbpedia.org/ontology/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT  ?a ?b ?c
+WHERE
+  { ?a rdf:type dbpedia:Artist .
+    ?b rdf:type dbpedia:Artist .
+    ?c rdf:type dbpedia:Film .
+    ?c dbpedia:starring ?a .
+    ?c dbpedia:starring ?b
+  }
+#-------------------------------------------------------
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  onto: <http://ontoTestFilms#>
+PREFIX  annot: <http://annotFilms#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  base: <http://ontoTestFilms>
+PREFIX  dbpedia: <http://dbpedia.org/ontology/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT  ?b ?c
+WHERE
+  { ?b rdf:type dbpedia:Band .
+    ?c rdf:type dbpedia:Film .
+    <http://dbpedia.org/resource/The_Quarrymen> dbpedia:associatedBand ?b .
+    ?c dbpedia:musicComposer ?b
+  }
+#-------------------------------------------------------
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  p:    <http://dbpedia.org/property/>
+PREFIX  o:    <http://dbpedia.org/ontology/>
+
+SELECT  *
+WHERE
+  { <http://dbpedia.org/resource/United_Kingdom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> o:Country .
+    <http://dbpedia.org/resource/United_Kingdom> o:capital ?capital .
+    <http://dbpedia.org/resource/United_Kingdom> ?p ?o
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  yago: <http://mpii.de/yago/resource/>
+PREFIX  georss: <http://www.georss.org/georss/>
+PREFIX  umbel-ac: <http://umbel.org/umbel/ac/>
+PREFIX  geonames: <http://www.geonames.org/ontology#>
+PREFIX  units: <http://dbpedia.org/units/>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  gn:   <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  gnpt: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt#>
+PREFIX  umbel-sc: <http://umbel.org/umbel/sc/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  gnpt02: <http://xldb.di.fc.ul.pt/xldb/publications/2009/10/geo-net-pt-02#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  wikicompany: <http://dbpedia.openlinksw.com/wikicompany/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  opencyc: <http://sw.opencyc.org/2008/06/10/concept/>
+
+SELECT  ?s
+WHERE
+  { <http://dbpedia.org/resource/Sudzha> rdf:type ?s }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?cat ?cat1 ?sub
+WHERE
+  { ?cat skos:broader <http://dbpedia.org/resource/Category:Palaces_in_France> }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?lang ?nation ?com
+WHERE
+  { ?lang rdf:type <http://dbpedia.org/ontology/Language> .
+    ?nation <http://dbpedia.org/ontology/language> ?lang .
+    ?nation rdf:type <http://dbpedia.org/ontology/Country> .
+    ?nation rdfs:comment ?com
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  dbpo: <http://dbpedia.org/ontology/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  *
+WHERE
+  { ?artist rdf:type dbpo:MusicalArtist .
+    ?artist dbpedia2:genre :Heavy_metal_music .
+    ?artist dbpedia2:genre :Hard_rock .
+    ?artist dbpedia2:genre :Thrash_metal .
+    ?artist dbpedia2:genre :Speed_metal
+  }
+#-------------------------------------------------------
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+PREFIX  :     <http://dbpedia.org/resource/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  dbpedia2: <http://dbpedia.org/property/>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpedia: <http://dbpedia.org/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT  ?cat ?cat1 ?sub
+WHERE
+  { ?cat skos:broader <http://dbpedia.org/resource/Category:Palaces_in_France> .
+    ?sub skos:subject ?cat .
+    ?m dbpedia2:museum ?sub
+  }
+#-------------------------------------------------------
+SELECT  ?a
+WHERE
+  { ?a <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?Person }

@@ -30,68 +30,66 @@ import org.apache.jena.query.QueryFactory;
 public class WeightGeneratorFromTestQueries {
 
 	public static void main(String[] args) throws IOException {
-//		String inputFile =  "/home/asal/IdeaProjects/PCG3/src/main/resources/test-line-query.ttl";
-//		String inputFile =  "/home/asal/Documents/3DFed/Queries/swdf-300-bgp-queries.txt";
-		String inputFile =  "/home/asal/Documents/3DFed/Queries/swdf-300-bgp-queries.txt";
-		Set<String> queries = readQueryFile(inputFile);
- 		System.out.println("Total Input queries are: " +queries.size());
-		
-		Map<Integer, Set<String>> patterns = getQueryPatterns(queries);
+		WeightGeneratorFromTestQueries wgftq = new WeightGeneratorFromTestQueries();
+		generateWeights();
+	}
+
+	public static void generateWeights() throws IOException {
+		long start = System.currentTimeMillis();
+		String inputFile = PathConstants.QUERIES_PATH;
+		WeightGeneratorFromTestQueries wgftq = new WeightGeneratorFromTestQueries();
+		Set<String> queries = wgftq.readQueryFile(inputFile);
+		System.out.println("Total Input queries are: " +queries.size());
+
+		Map<Integer, Set<String>> patterns = wgftq.getQueryPatterns(queries);
 		System.out.println("Total queries with patterns are: " +patterns.keySet().size());
-		
-		Map<String, Integer> graphWeight = getWeight(patterns);
 
-//		for(String key : graphWeight.keySet())
-//			System.out.println(key +"  ===>  " +graphWeight.get(key));
+		Map<String, Integer> graphWeight = wgftq.getWeight(patterns);
 
-		generateOutputFile(graphWeight, inputFile);
-				
-		System.out.println("Terminated Successfully");
+		wgftq.generateOutputFile(graphWeight, inputFile);
+
+		System.out.printf("Weight generation terminated successfully after: %d ms\n", System.currentTimeMillis() - start);
 	}
 
 		
 	
-	private static void generateOutputFile(Map<String, Integer> graphWeight, String inputFile) throws IOException {
+	private void generateOutputFile(Map<String, Integer> graphWeight, String inputFile) throws IOException {
 		List<String> takenPredicates = new ArrayList<String>();
-		String folder = "src/main/resources";
-		System.out.println("Output files are generated at: " +folder);
-		FileWriter weightFile = new FileWriter(folder.concat("/graphweight.txt")); 
-		FileWriter predicateEncodingFile = new FileWriter(folder.concat("/predicateEncoding.txt"));
+//		System.out.println("Output files are generated at: " +PathConstants.PATH);
 
-		for(String key : graphWeight.keySet()) {
-			String pred1 = key.split(" ")[0].trim();
-			String pred2 = key.split(" ")[1].trim();
-			int ser1 = 0;
-			int ser2 = 0;
-			if(!takenPredicates.contains(pred1)) {
-				takenPredicates.add(pred1);
-				ser1 = takenPredicates.indexOf(pred1);
-				predicateEncodingFile.write(ser1 +" = " +pred1 +"\n");
-				predicateEncodingFile.flush();
-			}  else
+		try (FileWriter weightFile = new FileWriter(PathConstants.GRAPH_WEIGHT_FILE);
+			 FileWriter predicateEncodingFile = new FileWriter(PathConstants.PREDICATE_FILE);) {
+
+			for (String key : graphWeight.keySet()) {
+				String pred1 = key.split(" ")[0].trim();
+				String pred2 = key.split(" ")[1].trim();
+				int ser1 = 0;
+				int ser2 = 0;
+				if (!takenPredicates.contains(pred1)) {
+					takenPredicates.add(pred1);
+					ser1 = takenPredicates.indexOf(pred1);
+					predicateEncodingFile.write(ser1 + " = " + pred1 + "\n");
+					predicateEncodingFile.flush();
+				} else
 					ser1 = takenPredicates.indexOf(pred1);
 
-			if(!takenPredicates.contains(pred2)) {
-				takenPredicates.add(pred2);
-				ser2 = takenPredicates.indexOf(pred2);
-				predicateEncodingFile.write(ser2 +" = " +pred2 +"\n");
-				predicateEncodingFile.flush();
-			}	else
+				if (!takenPredicates.contains(pred2)) {
+					takenPredicates.add(pred2);
+					ser2 = takenPredicates.indexOf(pred2);
+					predicateEncodingFile.write(ser2 + " = " + pred2 + "\n");
+					predicateEncodingFile.flush();
+				} else
 					ser2 = takenPredicates.indexOf(pred2);
 
-			weightFile.write(ser1 +" " +ser2 +" " +graphWeight.get(key) +"\n"); 
-			weightFile.flush();
+				weightFile.write(ser1 + " " + ser2 + " " + graphWeight.get(key) + "\n");
+				weightFile.flush();
+			}
 		}
-
-		weightFile.close();
-		predicateEncodingFile.close();
 	}
 
 
-	private static Map<String, Integer> getWeight(Map<Integer, Set<String>> patterns) {
+	private Map<String, Integer> getWeight(Map<Integer, Set<String>> patterns) {
 		Map<String, Integer> graphWeight = new HashMap<String, Integer>();
-
-		System.err.println(patterns.get(0));
 		for(int i=0; i<patterns.keySet().size(); i++) {
 			getPredicateWeightInPattern(graphWeight, patterns.get(i));
 		}
@@ -101,7 +99,7 @@ public class WeightGeneratorFromTestQueries {
 	}
 
 
-	private static Set<String> getPredicateWeightInPattern(Map<String, Integer> graphWeight, Set<String> pattern) {
+	private Set<String> getPredicateWeightInPattern(Map<String, Integer> graphWeight, Set<String> pattern) {
 		List<String> predicates = new ArrayList<String>();
 		Set<String> predicateWeight = new HashSet<String>();
 		for(String pat : pattern) {
@@ -140,7 +138,7 @@ public class WeightGeneratorFromTestQueries {
 
 
 
-	private static boolean isQuery(String line) {
+	private boolean isQuery(String line) {
 		boolean result = false;
 		try{
 			Query q = QueryFactory.create(line);
@@ -152,7 +150,7 @@ public class WeightGeneratorFromTestQueries {
 	}
 
 
-	private static Map<Integer, Set<String>> getQueryPatterns(Set<String> queries) {
+	private Map<Integer, Set<String>> getQueryPatterns(Set<String> queries) {
 		Map<Integer, Set<String>> patterns = new HashMap<Integer, Set<String>>();
 		int index = 0;
 		for(String query : queries) {
@@ -168,7 +166,7 @@ public class WeightGeneratorFromTestQueries {
 	}
 
 
-	private static Set<String> readQueryFile(String inputFile) {
+	private Set<String> readQueryFile(String inputFile) {
 		Set<String> fileData = new HashSet<String>();
 		try{
 

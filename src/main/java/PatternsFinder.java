@@ -27,45 +27,6 @@ public class PatternsFinder {
 	}
 
 	public static Set<String> getTriplePatterns(String query) {
-		String qry = "SELECT ?s { ?s <http://example.com/val> ?val . FILTER ( ?val < 20 ) }";
-
-		String qry2 = "PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>\r\n" + 
-				"PREFIX  foaf: <http://xmlns.com/foaf/0.1/>\r\n" + 
-				"PREFIX  dbp:  <http://dbpedia.org/property/>\r\n" + 
-				"PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\r\n" + 
-				"\r\n" + 
-				"SELECT DISTINCT  ?resource ?uri ?wtitle ?comment ?image\r\n" + 
-				"WHERE\r\n" + 
-				"  { {   { ?resource foaf:page <http://en.wikipedia.org/wiki/Cloud_computing> }\r\n" + 
-				"      UNION\r\n" + 
-				"        { ?resource foaf:page <http://en.wikipedia.org/wiki/Microsoft> }\r\n" + 
-				"      UNION\r\n" + 
-				"        { ?resource foaf:page <http://en.wikipedia.org/wiki/Portable_Document_Format> }\r\n" + 
-				"      UNION\r\n" + 
-				"        { ?resource foaf:page <http://en.wikipedia.org/wiki/Google> }\r\n" + 
-				"      UNION\r\n" + 
-				"        { ?resource foaf:page <http://en.wikipedia.org/wiki/Evolution_(advertisement)> }\r\n" + 
-				"      UNION\r\n" + 
-				"        { ?resource foaf:page <http://en.wikipedia.org/wiki/Hyper-V> }\r\n" + 
-				"      UNION\r\n" + 
-				"        { ?resource foaf:page <http://en.wikipedia.org/wiki/Guide_(Adventist_magazine)> }\r\n" + 
-				"      UNION\r\n" + 
-				"        { ?resource foaf:page <http://en.wikipedia.org/wiki/Insight_(E-mail_client)> }\r\n" + 
-				"      UNION\r\n" + 
-				"        { ?resource foaf:page <http://en.wikipedia.org/wiki/Home_(2009_film)> }\r\n" + 
-				"      UNION\r\n" + 
-				"        { ?resource foaf:page <http://en.wikipedia.org/wiki/E-book> }\r\n" + 
-				"    }\r\n" + 
-				"    ?resource foaf:page ?uri .\r\n" + 
-				"    ?resource rdfs:label ?wtitle\r\n" + 
-				"    FILTER langMatches(lang(?wtitle), \"en\")\r\n" + 
-				"    OPTIONAL\r\n" + 
-				"      { ?resource rdfs:comment ?comment\r\n" + 
-				"        FILTER langMatches(lang(?comment), \"en\")\r\n" + 
-				"      }\r\n" + 
-				"    OPTIONAL\r\n" + 
-				"      { ?resource foaf:depiction ?image }\r\n" + 
-				"  }";
 
 		Query q = QueryFactory.create(query);
 		

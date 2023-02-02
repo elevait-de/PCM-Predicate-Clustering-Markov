@@ -17,18 +17,14 @@
  * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-//package de.uni_leipzig.mcl.cluster;
 
 import de.uni_leipzig.mcl.cluster.SparseMatrix;
 import de.uni_leipzig.mcl.cluster.SparseMatrixLabeled;
 import de.uni_leipzig.mcl.cluster.SparseVector;
-import de.uni_leipzig.bf.cluster.ClusterGraph;
 
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.TreeSet;
-
-//import de.uni_leipzig.mcl.cluster.SparseMatrix;
 
 /**
  * MarkovClustering implements the Markov clustering (MCL) algorithm for graphs,
@@ -175,28 +171,20 @@ public class MarkovClustering{
         }
     }
     public static void main(String[] args) {
-//        String file = "test/topped.txt";
-        String file = "src/main/resources/graphweight.txt";
-
-        if (args.length > 1)
-            file = args[0];
 
         double maxResidual = 0.001;
         double gammaExp = 2.0;
         double loopGain = 0.00;
         double zeroMax = 0.001;
 
-        SparseMatrixLabeled matrix = SparseMatrixLabeled.loadMatrix(file," ");
+        SparseMatrixLabeled matrix = SparseMatrixLabeled.loadMatrix(PathConstants.GRAPH_WEIGHT_FILE," ");
 
         // we use the transpose because our sparse matrices are row-major
         matrix.setMatrix(matrix.getMatrix().transpose());
-        print(matrix.getMatrix(), "\nload");
         matrix.setMatrix(new MarkovClustering().run(matrix.getMatrix(), maxResidual, gammaExp, loopGain, zeroMax));
-        print(matrix.getMatrix(), "\nresult");
 
-        try (FileWriter clusterWriter = new FileWriter(PartitionGenerator.clusterFile)) {
+        try (FileWriter clusterWriter = new FileWriter(PathConstants.CLUSTER_FILE)) {
             for (TreeSet<String> s : matrix.getCluster()) {
-                System.out.println("\n" + s.toString());
                 clusterWriter.write(s.toString() + "\n");
                 clusterWriter.flush();
             }
