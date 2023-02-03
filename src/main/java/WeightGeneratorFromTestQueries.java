@@ -1,14 +1,7 @@
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.io.*;
+import java.util.*;
+
+import com.opencsv.CSVReader;
 
 import org.apache.jena.query.Query;
 import org.apache.jena.query.QueryFactory;
@@ -165,40 +158,26 @@ public class WeightGeneratorFromTestQueries {
 		return patterns;
 	}
 
+	private String stringArrayToSingleString(String[] input) {
+		StringBuilder sb = new StringBuilder();
+		for (Object obj : input)
+			sb.append(obj.toString()).append("\n");
+		return sb.substring(0, sb.length() - 1);
+	}
+
 
 	private Set<String> readQueryFile(String inputFile) {
-		Set<String> fileData = new HashSet<String>();
-		try{
+		Set<String> fileData = new HashSet<>();
 
-			BufferedReader br = new BufferedReader(new FileReader(inputFile));
-			String line = br.readLine();
-			if (line.startsWith("#-")) {
-				// case multiline
-				String multiline = "";
-				while ((line = br.readLine()) != null){
-					if (!line.startsWith("#-")) {
-						multiline = multiline.concat(" ").concat(line);
-					} else {
-						if(isQuery(multiline)) {
-							fileData.add(multiline);
-						}
-						multiline = "";
-					}
+		try (CSVReader reader = new CSVReader(new BufferedReader(new FileReader(inputFile)))) {
+			String[] queryLines;
+			while ((queryLines = reader.readNext()) != null) {
+				String queryText = stringArrayToSingleString(queryLines);
+				if (isQuery(queryText)) {
+					fileData.add(queryText);
 				}
-				if(isQuery(multiline)) {
-					fileData.add(multiline);
-				}
-			} else {
-				// case single line
-				do {
-					if(isQuery(line)) {
-						fileData.add(line);
-					}
-				}
-				while ((line = br.readLine()) != null);
 			}
-			br.close();
-		}catch(Exception e) {
+		} catch (Exception e) {
 			System.out.println("file not found");
 		}
 		return fileData;

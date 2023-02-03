@@ -45,3 +45,9 @@ Thumbs.db
 *.mov
 *.wmv
 
+src/main/resources/graphweight.txt
+src/main/resources/predicateEncoding.txt
+src/main/resources/swdf-clusters.txt
+src/main/resources/final-partitions/Partition*
+
+
