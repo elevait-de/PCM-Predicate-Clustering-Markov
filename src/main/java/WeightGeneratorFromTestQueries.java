@@ -32,16 +32,16 @@ public class WeightGeneratorFromTestQueries {
 		String inputFile = PathConstants.QUERIES_PATH;
 		WeightGeneratorFromTestQueries wgftq = new WeightGeneratorFromTestQueries();
 		Set<String> queries = wgftq.readQueryFile(inputFile);
-		System.out.println("Total Input queries are: " +queries.size());
+		System.out.println("Total Input queries : " +queries.size());
 
 		Map<Integer, Set<String>> patterns = wgftq.getQueryPatterns(queries);
-		System.out.println("Total queries with patterns are: " +patterns.keySet().size());
+		System.out.println("Total queries with patterns : " +patterns.keySet().size());
 
 		Map<String, Integer> graphWeight = wgftq.getWeight(patterns);
 
 		wgftq.generateOutputFile(graphWeight, inputFile);
 
-		System.out.printf("Weight generation terminated successfully after: %d ms\n", System.currentTimeMillis() - start);
+		System.out.printf("Weight generation time (ms): %d \n", System.currentTimeMillis() - start);
 	}
 
 		
@@ -49,7 +49,6 @@ public class WeightGeneratorFromTestQueries {
 	private void generateOutputFile(Map<String, Integer> graphWeight, String inputFile) throws IOException {
 		List<String> takenPredicates = new ArrayList<String>();
 //		System.out.println("Output files are generated at: " +PathConstants.PATH);
-
 		try (FileWriter weightFile = new FileWriter(PathConstants.GRAPH_WEIGHT_FILE);
 			 FileWriter predicateEncodingFile = new FileWriter(PathConstants.PREDICATE_FILE);) {
 

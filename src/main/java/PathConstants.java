@@ -1,9 +1,9 @@
 public class PathConstants {
 
     static final String PATH = "src/main/resources/";
-    public static final String QUERIES_PATH = "src/main/resources/input/queries/2014-05-26.csv";
+    public static final String QUERIES_PATH = "src/main/resources/input/queries/2014-11-03.csv";
     public static final String DATASET_PATH = "src/main/resources/input/datasets/SWDF.nt";
-    static final String CLUSTER_FILE = PATH +"swdf-clusters.txt";
+    static final String CLUSTER_FILE = PATH +"clusters.txt";
     static final String PREDICATE_FILE = PATH +"predicateEncoding.txt";
     static final String PREDICATE_FILES = PATH +"predicate-based/";
     static final String PARTITION_OUTPUT_FOLDER = PATH +"final-partitions/";

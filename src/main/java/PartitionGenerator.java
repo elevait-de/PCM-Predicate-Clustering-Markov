@@ -93,7 +93,9 @@ public class PartitionGenerator {
 				}
 			});
 
-			System.out.printf("PCM partitioned %d triples from input data set (%s).\n", lineCounter, PathConstants.DATASET_PATH);
+			System.out.printf("Number of triples : %d\n", lineCounter);
+			System.out.printf("Input data set : %s\n", PathConstants.DATASET_PATH);
+			System.out.printf("Input query-log file : %s\n", PathConstants.QUERIES_PATH);
 		}
 	}
 

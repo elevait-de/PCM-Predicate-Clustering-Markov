@@ -9,7 +9,7 @@ public class PCM {
         PartitionGenerator.generatePartitionFiles();
 
         PartitionGenerator.markovDistribution();
-        System.out.printf("PCM finished after: %d ms\n", System.currentTimeMillis() - start);
+        System.out.printf("PCM partitioning time (ms): %d \n", System.currentTimeMillis() - start);
 
     }
 }
