@@ -8,6 +8,8 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -16,6 +18,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
@@ -301,6 +304,23 @@ public class PartitionGenerator {
 	
 	
 	static void generatePartitionFiles() {
+		try {
+			if (Files.isDirectory(Path.of(PathConstants.PARTITION_OUTPUT_FOLDER))) {
+				Files.list(Path.of(PathConstants.PARTITION_OUTPUT_FOLDER)).forEach(path -> {
+					try {
+						if (path.getFileName().toString().startsWith("Partition")) {
+							Files.delete(path);
+						}
+					} catch (IOException e) {
+						throw new RuntimeException(e);
+					}
+				});
+			}
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+
+
 		for(int i = 0; i< PathConstants.TOTAL_PARTITIONS; i++) {
 		  try {
 		         File file = new File(PathConstants.PARTITION_OUTPUT_FOLDER +"/Partition"+i);
