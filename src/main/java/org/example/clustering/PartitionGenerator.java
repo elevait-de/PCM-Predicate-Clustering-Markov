@@ -1,4 +1,4 @@
-
+package org.example.clustering;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -18,7 +18,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
@@ -32,19 +31,21 @@ import org.apache.jena.riot.RDFDataMgr;
  */
 public class PartitionGenerator {
 
-	private static List<Integer> partitionFileSizes = new ArrayList<Integer>(); 
-	private static List<String> predicateEncodings = new ArrayList<String>(); 
-	private static Map<String, String> predicateFileNames = new HashMap<String, String>();
+	private static final List<Integer> partitionFileSizes = new ArrayList<>();
+	private static final List<String> predicateEncodings = new ArrayList<>();
+	private static final Map<String, String> predicateFileNames = new HashMap<>();
  
 	
 	public static void main(String[] args) throws IOException {
 
-		WeightGeneratorFromTestQueries.generateWeights();
+		cleanExistingPartitionFiles(PathConstants.PARTITION_OUTPUT_FOLDER);
 
-		getPredicateEncodings();
-		generatePartitionFiles();
+		WeightGeneratorFromTestQueries.generateWeights(PathConstants.QUERIES_PATH,PathConstants.GRAPH_WEIGHT_FILE,PathConstants.PREDICATE_FILE);
 
-		markovDistribution();
+		getPredicateEncodings(PathConstants.PREDICATE_FILE);
+		generatePartitionFiles(PathConstants.PARTITION_OUTPUT_FOLDER, PathConstants.TOTAL_PARTITIONS);
+
+		markovDistribution(PathConstants.PARTITION_OUTPUT_FOLDER, PathConstants.DATASET_PATH, PathConstants.QUERIES_PATH, PathConstants.TOTAL_PARTITIONS, PathConstants.GRAPH_WEIGHT_FILE, PathConstants.CLUSTER_FILE, PathConstants.PREDICATE_FILE);
 
 //		greedyDistribution(cluster);
 
@@ -53,17 +54,17 @@ public class PartitionGenerator {
 
 	}
 
-	static void markovDistribution() throws IOException {
-		MarkovClustering.main(new String[]{});
+	static void markovDistribution(String partitionOutputFolder, String datasetPath, String queriesPath, int totalPartitions, String graphWeightFile, String clusterFile, String predicateFile) throws IOException {
+		MarkovClustering.findClusters(graphWeightFile, clusterFile);
 
-		List<String> orderedPredicateList = getPredicatesInCluster();
-		Map<String, Integer> predicateToPartitionNr = assignPredicatesToPartitions(orderedPredicateList, PathConstants.TOTAL_PARTITIONS);
+		List<String> orderedPredicateList = getPredicatesInCluster(predicateFile, clusterFile);
+		Map<String, Integer> predicateToPartitionNr = assignPredicatesToPartitions(orderedPredicateList, totalPartitions);
 
-		try (BufferedReader reader = new BufferedReader(new FileReader(PathConstants.DATASET_PATH))) {
+		try (BufferedReader reader = new BufferedReader(new FileReader(datasetPath))) {
 
 			List<BufferedWriter> partitionWriters = new ArrayList<>();
-			for (int i = 0; i < PathConstants.TOTAL_PARTITIONS; i++) {
-				partitionWriters.add(new BufferedWriter(new FileWriter(PathConstants.PARTITION_OUTPUT_FOLDER + "/Partition" + i)));
+			for (int i = 0; i < totalPartitions; i++) {
+				partitionWriters.add(new BufferedWriter(new FileWriter(partitionOutputFolder + "/Partition" + i)));
 			}
 
 			String line;
@@ -76,7 +77,7 @@ public class PartitionGenerator {
 				}
 				String predicate = triple[1].trim();
 				int targetChunk;
-				targetChunk = predicateToPartitionNr.getOrDefault(predicate, PathConstants.TOTAL_PARTITIONS - 1);
+				targetChunk = predicateToPartitionNr.getOrDefault(predicate, totalPartitions - 1);
 
 				partitionWriters.get(targetChunk).write(line.trim());
 				partitionWriters.get(targetChunk).newLine();
@@ -94,8 +95,8 @@ public class PartitionGenerator {
 			});
 
 			System.out.printf("Number of triples : %d\n", lineCounter);
-			System.out.printf("Input data set : %s\n", PathConstants.DATASET_PATH);
-			System.out.printf("Input query-log file : %s\n", PathConstants.QUERIES_PATH);
+			System.out.printf("Input data set : %s\n", datasetPath);
+			System.out.printf("Input query-log file : %s\n", queriesPath);
 		}
 	}
 
@@ -116,9 +117,10 @@ public class PartitionGenerator {
 		return predicatesToPartitions;
 	}
 
-	private static List<String> getPredicatesInCluster() {
+	private static List<String> getPredicatesInCluster(String predicateFile, String clusterFile) {
 		HashMap<String, String> numberToPredicate = new HashMap<>();
-		try (BufferedReader br = new BufferedReader(new FileReader(PathConstants.PREDICATE_FILE))) {
+//		try (BufferedReader br = new BufferedReader(new FileReader(PathConstants.PREDICATE_FILE))) {
+		try (BufferedReader br = new BufferedReader(new FileReader(predicateFile))) {
 			String line;
 			while ((line = br.readLine()) != null) {
 				String[] lineWords = line.trim().split(" ");
@@ -132,7 +134,8 @@ public class PartitionGenerator {
 		}
 
 		LinkedList<String> orderedPredicateList = new LinkedList<>();
-		try (BufferedReader br = new BufferedReader(new FileReader(PathConstants.CLUSTER_FILE))) {
+//		try (BufferedReader br = new BufferedReader(new FileReader(PathConstants.CLUSTER_FILE))) {
+		try (BufferedReader br = new BufferedReader(new FileReader(clusterFile))) {
 			String line = br.readLine();
 			line = StringUtils.substringAfter(line, "[");
 			line = StringUtils.substringBeforeLast(line, "]");
@@ -151,31 +154,31 @@ public class PartitionGenerator {
 		return orderedPredicateList;
 	}
 
-	private static void greedyDistribution() throws IOException {
-		Set<String> cluster = getClusters(PathConstants.CLUSTER_FILE);
-		PredicateFileGenerator.generatePredicateFiles(PathConstants.DATASET_PATH, PathConstants.PREDICATE_FILES);
-		getPredicateFileNames();
+	private static void greedyDistribution(String clusterFile, String datasetPath, String predicateFile, String partitionOutputFolder, int totalPartitions, long partitionSize) throws IOException {
+		Set<String> cluster = getClusters(clusterFile);
+		PredicateFileGenerator.generatePredicateFiles(datasetPath, predicateFile);
+		getPredicateFileNames(predicateFile);
 
 		if(cluster.size() == 1) {
-			splitClusterIntoPartitions(cluster, PathConstants.PREDICATE_FILE, PathConstants.PARTITION_OUTPUT_FOLDER, PathConstants.TOTAL_PARTITIONS);
+			splitClusterIntoPartitions(cluster, partitionOutputFolder, totalPartitions, partitionSize);
 		}
 		else if(cluster.size() > 1) {
-			distributeClustersIntoPartitions(cluster, PathConstants.PREDICATE_FILE, PathConstants.PARTITION_OUTPUT_FOLDER, PathConstants.TOTAL_PARTITIONS);
+			distributeClustersIntoPartitions(cluster, predicateFile, totalPartitions, partitionSize);
 		}
 
-		distributeRemainingTriples();
+		distributeRemainingTriples(partitionOutputFolder);
 	}
 
-	private static void distributeClustersIntoPartitions(Set<String> clusters, String predicateFile, String outputFolder, int totalPartitions) throws IOException {
+	private static void distributeClustersIntoPartitions(Set<String> clusters, String outputFolder, int totalPartitions, long partitionSize) throws IOException {
 		for(String c : clusters) {
-			Set<String>cluster = new HashSet<String>();
+			Set<String>cluster = new HashSet<>();
 			cluster.add(c);
-			splitClusterIntoPartitions(cluster,predicateFile, outputFolder, totalPartitions);
+			splitClusterIntoPartitions(cluster, outputFolder, totalPartitions, partitionSize);
 
 		}
 	}
 
-	private static void splitClusterIntoPartitions(Set<String> cluster, String predicateFile, String outputFolder, int totalPartitions) throws IOException {
+	private static void splitClusterIntoPartitions(Set<String> cluster, String outputFolder, int totalPartitions, long partitionSize ) throws IOException {
         String predicates[] = cluster.iterator().next().split(",");
         int currentPartition = 0;
         int currentPartitionSize = 0;
@@ -188,12 +191,14 @@ public class PartitionGenerator {
         	if(currentPartition == totalPartitions-1)
         		currentPartition = 0;
         	
-        	if(currentPartitionSize < PathConstants.PARTITION_SIZE) {
+//        	if(currentPartitionSize < PathConstants.PARTITION_SIZE) {
+        	if(currentPartitionSize < partitionSize) {
         		currentPartitionSize = currentPartitionSize + tripleSet.size();
         		String fileName = outputFolder.concat("Partition") +currentPartition;
         		appendPartition(fileName, tripleSet);
         	}
-        	else if(currentPartitionSize >= PathConstants.PARTITION_SIZE) {
+//        	else if(currentPartitionSize >= PathConstants.PARTITION_SIZE) {
+        	else if(currentPartitionSize >= partitionSize) {
         		currentPartition = currentPartition + 1;
         		currentPartitionSize = tripleSet.size();
         		String fileName = outputFolder.concat("Partition") +currentPartition;
@@ -201,18 +206,19 @@ public class PartitionGenerator {
         }
 	}
 
-	private static void distributeRemainingTriples() throws IOException {
+	private static void distributeRemainingTriples(String partitionOutputFolder) throws IOException {
 		for(String predicate : predicateFileNames.keySet()) {
         	Set<String> tripleSet = getTriplesFromDataset(predicate);
-        	String smallestPartition = getSmallestFile();
+        	String smallestPartition = getSmallestFile(partitionOutputFolder);
     		appendPartition(smallestPartition, tripleSet);
 
 
 		}
 	}
 	
-	private static String getSmallestFile() {
-		File file = new File(PathConstants.PARTITION_OUTPUT_FOLDER);
+	private static String getSmallestFile(String partitionOutputFolder) {
+//		File file = new File(PathConstants.PARTITION_OUTPUT_FOLDER);
+		File file = new File(partitionOutputFolder);
 		File[] files = file.listFiles();
 		String fMaxName = "";
 		String fMinName = "";
@@ -249,9 +255,10 @@ public class PartitionGenerator {
 
 
 
-	private static void getPredicateFileNames() {
-		File folder = new File(PathConstants.PREDICATE_FILES);
-		File[] files = folder.listFiles(); 
+	private static void getPredicateFileNames(String predicateFiles) {
+//		File folder = new File(PathConstants.PREDICATE_FILES);
+		File folder = new File(predicateFiles);
+		File[] files = folder.listFiles();
 
 		for (File file:files) {
 			String predicate = "";
@@ -287,7 +294,7 @@ public class PartitionGenerator {
 	
 	
 	private static Set<String> getTriplesFromDataset(String predicate) {
-		Set<String> triples = new HashSet<String>();
+		Set<String> triples = new HashSet<>();
 		try{
 			BufferedReader br = new BufferedReader(new FileReader(predicateFileNames.get(predicate)));			
 			String s;
@@ -302,13 +309,10 @@ public class PartitionGenerator {
 		return triples;
 	}
 
-	
-	
-	
-	static void generatePartitionFiles() {
+	static void cleanExistingPartitionFiles(String partitionOutputFolder) {
 		try {
-			if (Files.isDirectory(Path.of(PathConstants.PARTITION_OUTPUT_FOLDER))) {
-				Files.list(Path.of(PathConstants.PARTITION_OUTPUT_FOLDER)).forEach(path -> {
+			if (Files.isDirectory(Path.of(partitionOutputFolder))) {
+				Files.list(Path.of(partitionOutputFolder)).forEach(path -> {
 					try {
 						if (path.getFileName().toString().startsWith("Partition")) {
 							Files.delete(path);
@@ -321,11 +325,14 @@ public class PartitionGenerator {
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
+	}
+	
+	
+	static void generatePartitionFiles(String partitionOutputFolder, int totalPartitions) {
 
-
-		for(int i = 0; i< PathConstants.TOTAL_PARTITIONS; i++) {
+		for(int i = 0; i< totalPartitions; i++) {
 		  try {
-		         File file = new File(PathConstants.PARTITION_OUTPUT_FOLDER +"/Partition"+i);
+		         File file = new File(partitionOutputFolder +"/Partition"+i);
 		         file.createNewFile();
 		         partitionFileSizes.add(i, 0);
 	      } catch(Exception e) {
@@ -336,8 +343,8 @@ public class PartitionGenerator {
 	
 
 	
-	static void getPredicateEncodings() {
-		try (BufferedReader br = new BufferedReader(new FileReader(PathConstants.PREDICATE_FILE));) {
+	static void getPredicateEncodings(String predicateEncoding) {
+		try (BufferedReader br = new BufferedReader(new FileReader(predicateEncoding));) {
 			String s;
 			while ((s = br.readLine()) != null){
 				if(s.length() > 0) {

@@ -1,3 +1,5 @@
+package org.example.clustering;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -234,7 +236,16 @@ public class PatternsFinder {
 
 	private static String seperateKeywords(String input) {
 		String pattern = input;
-		if(input.contains("UNION")) {
+		if (input.contains("GRAPH")) {
+			String deleteme = input.split("GRAPH")[0];
+			pattern = input.split("GRAPH")[0];
+		}
+		else if(input.contains("SELECT")) {
+			String deleteme = input.split("SELECT")[0];
+			pattern = input.split("SELECT")[0];
+		}
+		else if(input.contains("UNION")) {
+			String deleteme = input.split("UNION")[0];
 			pattern = input.split("UNION")[0];
 		}
 		else if(input.contains("DISTINCT")) {

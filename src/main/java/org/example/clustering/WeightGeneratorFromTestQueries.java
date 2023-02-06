@@ -1,3 +1,5 @@
+package org.example.clustering;
+
 import java.io.*;
 import java.util.*;
 
@@ -23,34 +25,30 @@ import org.apache.jena.query.QueryFactory;
 public class WeightGeneratorFromTestQueries {
 
 	public static void main(String[] args) throws IOException {
-		WeightGeneratorFromTestQueries wgftq = new WeightGeneratorFromTestQueries();
-		generateWeights();
+		generateWeights(PathConstants.QUERIES_PATH, PathConstants.GRAPH_WEIGHT_FILE, PathConstants.PREDICATE_FILE);
 	}
 
-	public static void generateWeights() throws IOException {
+	public static void generateWeights(String queryFile, String graphWeightFile, String predicateFile) throws IOException {
 		long start = System.currentTimeMillis();
-		String inputFile = PathConstants.QUERIES_PATH;
 		WeightGeneratorFromTestQueries wgftq = new WeightGeneratorFromTestQueries();
-		Set<String> queries = wgftq.readQueryFile(inputFile);
-		System.out.println("Total Input queries : " +queries.size());
+		Set<String> queries = wgftq.readQueryFile(queryFile);
+		System.out.println("Total Input queries are: " +queries.size());
 
 		Map<Integer, Set<String>> patterns = wgftq.getQueryPatterns(queries);
 		System.out.println("Total queries with patterns : " +patterns.keySet().size());
 
 		Map<String, Integer> graphWeight = wgftq.getWeight(patterns);
 
-		wgftq.generateOutputFile(graphWeight, inputFile);
+		wgftq.generateOutputFile(graphWeight, graphWeightFile, predicateFile);
 
 		System.out.printf("Weight generation time (ms): %d \n", System.currentTimeMillis() - start);
 	}
 
-		
-	
-	private void generateOutputFile(Map<String, Integer> graphWeight, String inputFile) throws IOException {
-		List<String> takenPredicates = new ArrayList<String>();
-//		System.out.println("Output files are generated at: " +PathConstants.PATH);
-		try (FileWriter weightFile = new FileWriter(PathConstants.GRAPH_WEIGHT_FILE);
-			 FileWriter predicateEncodingFile = new FileWriter(PathConstants.PREDICATE_FILE);) {
+	private void generateOutputFile(Map<String, Integer> graphWeight, String graphWeightFile, String predicateFile) throws IOException {
+		List<String> takenPredicates = new ArrayList<>();
+
+		try (FileWriter weightFile = new FileWriter(graphWeightFile);
+			 FileWriter predicateEncodingFile = new FileWriter(predicateFile);) {
 
 			for (String key : graphWeight.keySet()) {
 				String pred1 = key.split(" ")[0].trim();
@@ -81,7 +79,7 @@ public class WeightGeneratorFromTestQueries {
 
 
 	private Map<String, Integer> getWeight(Map<Integer, Set<String>> patterns) {
-		Map<String, Integer> graphWeight = new HashMap<String, Integer>();
+		Map<String, Integer> graphWeight = new HashMap<>();
 		for(int i=0; i<patterns.keySet().size(); i++) {
 			getPredicateWeightInPattern(graphWeight, patterns.get(i));
 		}
@@ -92,8 +90,8 @@ public class WeightGeneratorFromTestQueries {
 
 
 	private Set<String> getPredicateWeightInPattern(Map<String, Integer> graphWeight, Set<String> pattern) {
-		List<String> predicates = new ArrayList<String>();
-		Set<String> predicateWeight = new HashSet<String>();
+		List<String> predicates = new ArrayList<>();
+		Set<String> predicateWeight = new HashSet<>();
 		for(String pat : pattern) {
 			if (pat.contains(" ")) {
 				String predicate = pat.split(" ")[1].trim();
@@ -143,7 +141,7 @@ public class WeightGeneratorFromTestQueries {
 
 
 	private Map<Integer, Set<String>> getQueryPatterns(Set<String> queries) {
-		Map<Integer, Set<String>> patterns = new HashMap<Integer, Set<String>>();
+		Map<Integer, Set<String>> patterns = new HashMap<>();
 		int index = 0;
 		for(String query : queries) {
 			try {

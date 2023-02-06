@@ -1,3 +1,5 @@
+package org.example.clustering;
+
 /*
  * Copyright (c) 2006 Gregor Heinrich. All rights reserved. Redistribution and
  * use in source and binary forms, with or without modification, are permitted
@@ -170,20 +172,21 @@ public class MarkovClustering{
             a.add(i, i, loopGain);
         }
     }
-    public static void main(String[] args) {
+
+    public static void findClusters(String graphWeightFile, String clusterFile) {
 
         double maxResidual = 0.001;
         double gammaExp = 2.0;
         double loopGain = 0.00;
         double zeroMax = 0.001;
 
-        SparseMatrixLabeled matrix = SparseMatrixLabeled.loadMatrix(PathConstants.GRAPH_WEIGHT_FILE," ");
+        SparseMatrixLabeled matrix = SparseMatrixLabeled.loadMatrix(graphWeightFile," ");
 
         // we use the transpose because our sparse matrices are row-major
         matrix.setMatrix(matrix.getMatrix().transpose());
         matrix.setMatrix(new MarkovClustering().run(matrix.getMatrix(), maxResidual, gammaExp, loopGain, zeroMax));
 
-        try (FileWriter clusterWriter = new FileWriter(PathConstants.CLUSTER_FILE)) {
+        try (FileWriter clusterWriter = new FileWriter(clusterFile)) {
             for (TreeSet<String> s : matrix.getCluster()) {
                 clusterWriter.write(s.toString() + "\n");
                 clusterWriter.flush();
@@ -202,6 +205,10 @@ public class MarkovClustering{
 
             }
         }
+    }
+
+    public static void main(String[] args) {
+        findClusters(PathConstants.GRAPH_WEIGHT_FILE, PathConstants.CLUSTER_FILE);
     }
 
 }
