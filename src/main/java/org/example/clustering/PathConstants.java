@@ -5,6 +5,7 @@ public class PathConstants {
     private PathConstants() {}
 
     static final String PATH = "src/main/resources/";
+    public static final String MEASUREMENT_PATH = PATH + "/measurements.csv";
     public static final String QUERIES_PATH = "src/main/resources/input/queries/2014-05-19.csv";
     public static final String DATASET_PATH = "src/main/resources/input/datasets/SWDF.nt";
     static final String CLUSTER_FILE = PATH +"clusters.txt";
