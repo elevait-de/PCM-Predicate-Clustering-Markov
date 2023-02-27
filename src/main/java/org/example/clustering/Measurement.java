@@ -82,16 +82,11 @@ public class Measurement {
 
     public Measurement setQuerySetPath(String querySetPath) {
         this.querySetPath = querySetPath;
-        setQuerySetSize();
         return this;
     }
 
-    private void setQuerySetSize() {
-        try (Stream<String> lines = Files.lines(Paths.get(querySetPath))) {
-            querySetSize = lines.count();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+    public void setQuerySetSize(long querySetSize) {
+        this.querySetSize = querySetSize;
     }
 
     public Measurement setDataSetPath(String dataSetPath) {

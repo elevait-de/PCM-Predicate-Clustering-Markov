@@ -25,16 +25,19 @@ import org.apache.jena.query.QueryFactory;
 public class WeightGeneratorFromTestQueries {
 
 	public static void main(String[] args) throws IOException {
-		generateWeights(PathConstants.QUERIES_PATH, PathConstants.GRAPH_WEIGHT_FILE, PathConstants.PREDICATE_FILE);
+		generateWeights(PathConstants.QUERIES_PATH, PathConstants.GRAPH_WEIGHT_FILE, PathConstants.PREDICATE_FILE, null);
 	}
 
-	public static void generateWeights(String queryFile, String graphWeightFile, String predicateFile) throws IOException {
+	public static void generateWeights(String queryFile, String graphWeightFile, String predicateFile, Measurement measurement) throws IOException {
 		long start = System.currentTimeMillis();
 		WeightGeneratorFromTestQueries wgftq = new WeightGeneratorFromTestQueries();
 		Set<String> queries = wgftq.readQueryFile(queryFile);
 		System.out.println("Total Input queries are: " +queries.size());
 
 		Map<Integer, Set<String>> patterns = wgftq.getQueryPatterns(queries);
+		if (measurement != null) {
+			measurement.setQuerySetSize(patterns.keySet().size());
+		}
 		System.out.println("Total queries with patterns : " +patterns.keySet().size());
 
 		Map<String, Integer> graphWeight = wgftq.getWeight(patterns);

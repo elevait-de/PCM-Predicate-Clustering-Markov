@@ -40,7 +40,7 @@ public class PartitionGenerator {
 
 		cleanExistingPartitionFiles(PathConstants.PARTITION_OUTPUT_FOLDER);
 
-		WeightGeneratorFromTestQueries.generateWeights(PathConstants.QUERIES_PATH,PathConstants.GRAPH_WEIGHT_FILE,PathConstants.PREDICATE_FILE);
+		WeightGeneratorFromTestQueries.generateWeights(PathConstants.QUERIES_PATH,PathConstants.GRAPH_WEIGHT_FILE,PathConstants.PREDICATE_FILE, null);
 
 		getPredicateEncodings(PathConstants.PREDICATE_FILE);
 		generatePartitionFiles(PathConstants.PARTITION_OUTPUT_FOLDER, PathConstants.TOTAL_PARTITIONS);

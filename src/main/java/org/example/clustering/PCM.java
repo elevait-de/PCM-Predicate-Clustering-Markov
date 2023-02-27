@@ -23,7 +23,7 @@ public class PCM {
         PartitionGenerator.cleanExistingPartitionFiles(partitionOutputFolder);
 
         long start = System.currentTimeMillis();
-        WeightGeneratorFromTestQueries.generateWeights(queriesPath, graphWeightFile, predicateFile);
+        WeightGeneratorFromTestQueries.generateWeights(queriesPath, graphWeightFile, predicateFile, measurement);
 
         PartitionGenerator.getPredicateEncodings(predicateFile);
         PartitionGenerator.generatePartitionFiles(partitionOutputFolder, totalPartitions);
@@ -34,7 +34,7 @@ public class PCM {
     }
 
     public static void clusterWithoutPartitioning(String partitionOutputFolder, String queriesPath, String graphWeightFile, String predicateFile, int totalPartitions, String clusterFile) throws IOException {
-        WeightGeneratorFromTestQueries.generateWeights(queriesPath, graphWeightFile, predicateFile);
+        WeightGeneratorFromTestQueries.generateWeights(queriesPath, graphWeightFile, predicateFile, null);
         PartitionGenerator.getPredicateEncodings(predicateFile);
         MarkovClustering.findClusters(graphWeightFile, clusterFile);
     }
