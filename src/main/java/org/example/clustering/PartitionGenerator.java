@@ -137,6 +137,9 @@ public class PartitionGenerator {
 //		try (BufferedReader br = new BufferedReader(new FileReader(PathConstants.CLUSTER_FILE))) {
 		try (BufferedReader br = new BufferedReader(new FileReader(clusterFile))) {
 			String line = br.readLine();
+			if (StringUtils.isEmpty(line)) {
+				return orderedPredicateList;
+			}
 			line = StringUtils.substringAfter(line, "[");
 			line = StringUtils.substringBeforeLast(line, "]");
 			String[] predicateNumbers = line.split(", ");

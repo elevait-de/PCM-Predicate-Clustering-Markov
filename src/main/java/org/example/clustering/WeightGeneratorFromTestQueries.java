@@ -2,6 +2,7 @@ package org.example.clustering;
 
 import java.io.*;
 import java.util.*;
+import java.util.Set;
 
 import com.opencsv.CSVReader;
 
@@ -86,8 +87,8 @@ public class WeightGeneratorFromTestQueries {
 		for(int i=0; i<patterns.keySet().size(); i++) {
 			getPredicateWeightInPattern(graphWeight, patterns.get(i));
 		}
-		
-		
+
+		System.out.println("Total edges of weighted graph of predicates: " + graphWeight.size());
 		return graphWeight;
 	}
 
